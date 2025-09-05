@@ -27,6 +27,11 @@ Este repositorio contiene la configuración inicial y los primeros componentes d
 
 - Tabler Icons
 
+## 📂 Documentación
+- 📖 [Estructura del Proyecto](docs/project-structure.md)
+- 🔗 [Reglas de Import (Alias)](docs/alias.md)
+
+
 ## 📌 Notas
 - Página `/playground` área de pruebas para componentes UI.
 
