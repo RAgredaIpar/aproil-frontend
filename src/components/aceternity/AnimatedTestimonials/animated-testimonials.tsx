@@ -1,47 +1,46 @@
-"use client";
+'use client'
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
-
-import { useEffect, useState } from "react";
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react'
+import { motion, AnimatePresence } from 'motion/react'
+import { useEffect, useState } from 'react'
 
 type Testimonial = {
-    quote: string;
-    name: string;
-    designation: string;
-    src: string;
-};
+    quote: string
+    name: string
+    designation: string
+    src: string
+}
 export const AnimatedTestimonials = ({
-                                         testimonials,
-                                         autoplay = false,
-                                     }: {
-    testimonials: Testimonial[];
-    autoplay?: boolean;
+    testimonials,
+    autoplay = false,
+}: {
+    testimonials: Testimonial[]
+    autoplay?: boolean
 }) => {
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(0)
 
     const handleNext = () => {
-        setActive((prev) => (prev + 1) % testimonials.length);
-    };
+        setActive((prev) => (prev + 1) % testimonials.length)
+    }
 
     const handlePrev = () => {
-        setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    };
+        setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+    }
 
     const isActive = (index: number) => {
-        return index === active;
-    };
+        return index === active
+    }
 
     useEffect(() => {
         if (autoplay) {
-            const interval = setInterval(handleNext, 5000);
-            return () => clearInterval(interval);
+            const interval = setInterval(handleNext, 5000)
+            return () => clearInterval(interval)
         }
-    }, [autoplay]);
+    }, [autoplay])
 
     const randomRotateY = () => {
-        return Math.floor(Math.random() * 21) - 10;
-    };
+        return Math.floor(Math.random() * 21) - 10
+    }
     return (
         <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
             <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
@@ -75,7 +74,7 @@ export const AnimatedTestimonials = ({
                                     }}
                                     transition={{
                                         duration: 0.4,
-                                        ease: "easeInOut",
+                                        ease: 'easeInOut',
                                     }}
                                     className="absolute inset-0 origin-bottom"
                                 >
@@ -109,7 +108,7 @@ export const AnimatedTestimonials = ({
                         }}
                         transition={{
                             duration: 0.2,
-                            ease: "easeInOut",
+                            ease: 'easeInOut',
                         }}
                     >
                         <h3 className="text-2xl font-bold text-black dark:text-white">
@@ -119,22 +118,22 @@ export const AnimatedTestimonials = ({
                             {testimonials[active].designation}
                         </p>
                         <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
-                            {testimonials[active].quote.split(" ").map((word, index) => (
+                            {testimonials[active].quote.split(' ').map((word, index) => (
                                 <motion.span
                                     key={index}
                                     initial={{
-                                        filter: "blur(10px)",
+                                        filter: 'blur(10px)',
                                         opacity: 0,
                                         y: 5,
                                     }}
                                     animate={{
-                                        filter: "blur(0px)",
+                                        filter: 'blur(0px)',
                                         opacity: 1,
                                         y: 0,
                                     }}
                                     transition={{
                                         duration: 0.2,
-                                        ease: "easeInOut",
+                                        ease: 'easeInOut',
                                         delay: 0.02 * index,
                                     }}
                                     className="inline-block"
@@ -161,5 +160,5 @@ export const AnimatedTestimonials = ({
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}

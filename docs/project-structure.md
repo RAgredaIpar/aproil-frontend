@@ -2,30 +2,30 @@
 
 ```plaintext
 src/
- ├── app/            
- │   ├── routes/     
- │   │   ├── public/     
- │   │   └── private/    
- │   ├── router.tsx      
- │   └── index.tsx       
- ├── assets/            
- ├── components/        
- ├── config/            
- │   ├── paths.tsx       
- │   └── env.tsx       
- ├── docs/         
- ├── features/          
- ├── hooks/             
- ├── lib/               
- │   ├── i18n/           
- │   │   ├── index.ts    
- │   │   └── en.js       
- ├── playground/         
- │   └── demos/          
- ├── testing/            
- │   └── mocks/          
- ├── types/             
- ├── utils/               
+ ├── app/
+ │   ├── routes/
+ │   │   ├── public/
+ │   │   └── private/
+ │   ├── router.tsx
+ │   └── index.tsx
+ ├── assets/
+ ├── components/
+ ├── config/
+ │   ├── paths.tsx
+ │   └── env.tsx
+ ├── docs/
+ ├── features/
+ ├── hooks/
+ ├── lib/
+ │   ├── i18n/
+ │   │   ├── index.ts
+ │   │   └── en.js
+ ├── playground/
+ │   └── demos/
+ ├── testing/
+ │   └── mocks/
+ ├── types/
+ ├── utils/
 ```
 
 # 📁 Descripción de Carpetas y Archivos
@@ -33,6 +33,7 @@ src/
 ---
 
 ## **app/**
+
 Contiene la configuración global de la aplicación.
 
 - **routes/**  
@@ -49,17 +50,20 @@ Contiene la configuración global de la aplicación.
 ---
 
 ## **assets/**
+
 Recursos estáticos como **imágenes, íconos, SVGs y fuentes**.
 
 ---
 
 ## **components/**
+
 Componentes compartidos y reutilizables.  
 Ejemplo: botones, modales, inputs, layouts comunes.
 
 ---
 
 ## **config/**
+
 Centraliza configuraciones globales y constantes.
 
 - **paths.tsx**  
@@ -71,6 +75,7 @@ Centraliza configuraciones globales y constantes.
 ---
 
 ## **features/**
+
 Módulos de negocio organizados por **feature** (feature-based architecture).  
 Cada módulo incluye su lógica, componentes, hooks y pruebas.  
 Ejemplo: `auth/`, `users/`, `comments/`

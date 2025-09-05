@@ -18,7 +18,9 @@ Este repositorio contiene la configuración inicial y los primeros componentes d
     ```bash
     npm run dev
     ```
+
 ## 🛠️ Tecnologías
+
 - React 19 + Vite
 
 - Tailwind CSS v4
@@ -28,11 +30,12 @@ Este repositorio contiene la configuración inicial y los primeros componentes d
 - Tabler Icons
 
 ## 📂 Documentación
+
 - 📖 [Estructura del Proyecto](docs/project-structure.md)
 - 🔗 [Reglas de Import (Alias)](docs/alias.md)
 
-
 ## 📌 Notas
+
 - Página `/playground` área de pruebas para componentes UI.
 
-- Estado del proyecto: __En desarrollo__.
+- Estado del proyecto: **En desarrollo**.

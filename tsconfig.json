@@ -1,24 +1,21 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
-  "compilerOptions": {
-    "strict": true,
-    "baseUrl": "./",
-    "paths": {
-      "@app/*": ["src/app/*"],
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@config/*": ["src/config/*"],
-      "@features/*": ["src/features/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@lib/*": ["src/lib/*"],
-      "@playground/*": ["src/playground/*"],
-      "@testing/*": ["src/testing/*"],
-      "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
+    "files": [],
+    "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+    "compilerOptions": {
+        "strict": true,
+        "baseUrl": "./",
+        "paths": {
+            "@app/*": ["src/app/*"],
+            "@assets/*": ["src/assets/*"],
+            "@components/*": ["src/components/*"],
+            "@config/*": ["src/config/*"],
+            "@features/*": ["src/features/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@lib/*": ["src/lib/*"],
+            "@playground/*": ["src/playground/*"],
+            "@testing/*": ["src/testing/*"],
+            "@types/*": ["src/types/*"],
+            "@utils/*": ["src/utils/*"]
+        }
     }
-  }
 }

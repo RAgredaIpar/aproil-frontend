@@ -1,16 +1,18 @@
-import { lazy, Suspense } from "react";
-import type { RouteObject } from "react-router-dom";
-import PlaygroundLayout from "./layout";
-import { PlaygroundGate } from "./guard";
-import { demos } from "./demos";
+import type { RouteObject } from 'react-router-dom'
 
-const enabled = import.meta.env.DEV || import.meta.env.VITE_ENABLE_PLAYGROUND === "true";
+import { lazy, Suspense } from 'react'
+
+import { demos } from './demos'
+import { PlaygroundGate } from './guard'
+import PlaygroundLayout from './layout'
+
+const enabled = import.meta.env.DEV || import.meta.env.VITE_ENABLE_PLAYGROUND === 'true'
 
 export function getPlaygroundRoutes(): RouteObject[] {
-    if (!enabled) return [];
+    if (!enabled) return []
 
     const children: RouteObject[] = demos.map((d) => {
-        const Comp = lazy(d.loader);
+        const Comp = lazy(d.loader)
         return {
             path: d.path,
             element: (
@@ -18,21 +20,18 @@ export function getPlaygroundRoutes(): RouteObject[] {
                     <Comp />
                 </Suspense>
             ),
-        };
-    });
+        }
+    })
 
     return [
         {
-            path: "/playground",
+            path: '/playground',
             element: (
                 <PlaygroundGate>
                     <PlaygroundLayout />
                 </PlaygroundGate>
             ),
-            children: [
-                ...children,
-                { index: true, element: <div>Elige un demo en el menú.</div> },
-            ],
+            children: [...children, { index: true, element: <div>Elige un demo en el menú.</div> }],
         },
-    ];
+    ]
 }
