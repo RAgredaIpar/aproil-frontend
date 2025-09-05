@@ -33,6 +33,8 @@ Este repositorio contiene la configuración inicial y los primeros componentes d
 
 - 📖 [Estructura del Proyecto](docs/project-structure.md)
 - 🔗 [Reglas de Import (Alias)](docs/alias.md)
+- 🔗 [Reglas de commits](docs/commits.md)
+
 
 ## 📌 Notas
 
