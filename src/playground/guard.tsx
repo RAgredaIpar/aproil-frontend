@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react'
-
 import { Navigate } from 'react-router-dom'
+
+import type { ReactNode } from 'react'
 
 const enabled = import.meta.env.DEV || import.meta.env.VITE_ENABLE_PLAYGROUND === 'true'
 

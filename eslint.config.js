@@ -47,7 +47,13 @@ export default tseslint.config([
             'import/order': [
                 'warn',
                 {
-                    groups: ['builtin', 'external', 'internal'],
+                    groups: [
+                        ['builtin', 'external'],
+                        ['internal'],
+                        ['parent', 'sibling', 'index'],
+                        'object',
+                        'type',
+                    ],
                     pathGroups: [
                         {
                             pattern: '@/**',
@@ -92,15 +98,12 @@ export default tseslint.config([
             '@typescript-eslint/no-explicit-any': 'error',
             '@typescript-eslint/no-empty-function': 'warn',
             'no-alert': 'error',
-            'no-magic-numbers': 'warn',
+            'no-magic-numbers': 'off',
             'prefer-const': 'error',
             '@typescript-eslint/no-unused-vars': [
                 'error',
                 { args: 'none', varsIgnorePattern: '^_' },
             ],
-
-            // Imports ordenados
-            'perfectionist/sort-imports': ['error', { tsconfigRootDir: '.' }],
 
             // Consistencia en los nombres de los archivos
             'unicorn/filename-case': [

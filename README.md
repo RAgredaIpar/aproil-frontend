@@ -35,7 +35,6 @@ Este repositorio contiene la configuración inicial y los primeros componentes d
 - 🔗 [Reglas de Import (Alias)](docs/alias.md)
 - 🔗 [Reglas de commits](docs/commits.md)
 
-
 ## 📌 Notas
 
 - Página `/playground` área de pruebas para componentes UI.

@@ -1,10 +1,10 @@
-import type { RouteObject } from 'react-router-dom'
-
 import { lazy, Suspense } from 'react'
 
 import { demos } from './demos'
 import { PlaygroundGate } from './guard'
 import PlaygroundLayout from './layout'
+
+import type { RouteObject } from 'react-router-dom'
 
 const enabled = import.meta.env.DEV || import.meta.env.VITE_ENABLE_PLAYGROUND === 'true'
 
