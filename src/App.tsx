@@ -1,13 +1,13 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import HomePage from './pages/public/HomePage'
-import { getPlaygroundRoutes } from './playground/routes'
+import PublicLayout from "./pages/public/_layout/PublicLayout.tsx";
+import { getPlaygroundRoutes } from "./playground/routes";
 
 const router = createBrowserRouter([
-    { path: '/', element: <HomePage /> },
-    ...getPlaygroundRoutes(), // /playground solo en dev
-])
+  { path: "/", element: <PublicLayout /> },
+  ...getPlaygroundRoutes(), // /playground solo en dev
+]);
 
 export default function App() {
-    return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
