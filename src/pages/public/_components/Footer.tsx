@@ -1,11 +1,12 @@
-import logoUrl from "@assets/aproil-logo.svg";
-import icon9001 from "@assets/footer/icon-9001.svg";
-import iconMex from "@assets/footer/icon-mexico.svg";
-import iconContacto from "@assets/header/icon-contacto.svg";
-import iconIndustrias from "@assets/header/icon-industria.svg";
-import iconInicio from "@assets/header/icon-inicio.svg";
-import iconProductos from "@assets/header/icon-product.svg";
-import iconServicios from "@assets/header/icon-servicio.svg";
+import { icon9001, iconMex } from "@assets/footer";
+import {
+  iconLogo,
+  iconContacto,
+  iconIndustrias,
+  iconProductos,
+  iconServicios,
+  iconInicio,
+} from "@assets/header";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div>
               <img
-                src={logoUrl}
+                src={iconLogo}
                 alt="APROIL Lubricants"
                 className="h-25 w-auto -translate-x-3"
                 draggable={false}

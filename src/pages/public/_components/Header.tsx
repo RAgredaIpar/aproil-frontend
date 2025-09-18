@@ -1,10 +1,12 @@
-import logoUrl from "@assets/aproil-logo.svg";
-import iconBuscar from "@assets/header/icon-buscar.svg";
-import iconContacto from "@assets/header/icon-contacto.svg";
-import iconIndustrias from "@assets/header/icon-industria.svg";
-import iconInicio from "@assets/header/icon-inicio.svg";
-import iconProductos from "@assets/header/icon-product.svg";
-import iconServicios from "@assets/header/icon-servicio.svg";
+import {
+  iconLogo,
+  iconContacto,
+  iconIndustrias,
+  iconProductos,
+  iconServicios,
+  iconInicio,
+  iconBuscar,
+} from "@assets/header";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
@@ -17,7 +19,7 @@ export default function Header() {
           aria-label="APROIL - Inicio"
         >
           <img
-            src={logoUrl}
+            src={iconLogo}
             alt="APROIL Lubricants"
             className="h-30 w-auto"
             draggable={false}

@@ -7,7 +7,7 @@ import { getPlaygroundRoutes } from "../playground/routes";
 export const router = createBrowserRouter([
   {
     element: <PublicLayout />,
-    children: [{ path: "/", element: <HomePage /> }],
+    children: [{ index: true, element: <HomePage /> }],
   },
   ...getPlaygroundRoutes(),
 ]);
