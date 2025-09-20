@@ -8,7 +8,7 @@ export default function PublicLayout() {
     <div className="flex min-h-dvh flex-col">
       <Header />
 
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main className="flex-1 container mx-auto px-4 py-4">
         <Outlet />
       </main>
 
