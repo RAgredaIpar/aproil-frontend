@@ -5,38 +5,27 @@ import { useEffect, useRef, useState } from "react";
 import { feature } from "topojson-client";
 
 import type { FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
-type GlobeSVGProps = React.SVGProps<SVGSVGElement>;
-
+import type { ComponentPropsWithoutRef } from "react";
 import type { Topology } from "topojson-specification";
 
 const REGIONS_URL =
   "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
-
 const BASE_SIZE = 500;
 const ROT_SPEED = 0.3;
 const DAMPING = 1400;
 
+type GlobeSVGProps = ComponentPropsWithoutRef<"canvas">;
+
 export function GlobeSVG(props: GlobeSVGProps) {
-  const [rotation, setRotation] = useState<[number, number, number]>([
-    0, -20, 0,
-  ]);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [countries, setCountries] = useState<FeatureCollection<
     Geometry,
     GeoJsonProperties
   > | null>(null);
 
-  const pointerX = useRef<number | null>(null);
+  const rotation = useRef<[number, number, number]>([0, -20, 0]);
   const velocity = useRef(ROT_SPEED);
-
-  useEffect(() => {
-    let raf = 0;
-    const tick = () => {
-      setRotation(([λ, φ, γ]) => [λ + velocity.current, φ, γ]);
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  const pointerX = useRef<number | null>(null);
 
   // cargar países
   useEffect(() => {
@@ -51,9 +40,63 @@ export function GlobeSVG(props: GlobeSVGProps) {
       });
   }, []);
 
+  // animación
+  useEffect(() => {
+    if (!countries) return;
+    const ctx = canvasRef.current?.getContext("2d");
+    if (!ctx) return;
+
+    const projection = d3geo
+      .geoOrthographic()
+      .translate([BASE_SIZE / 2, BASE_SIZE / 2])
+      .scale(BASE_SIZE * 0.48)
+      .clipAngle(90);
+
+    const path = d3geo.geoPath(projection, ctx);
+
+    const render = () => {
+      if (!ctx) return;
+
+      // limpiar canvas
+      ctx.clearRect(0, 0, BASE_SIZE, BASE_SIZE);
+
+      // aplicar rotación actual
+      projection.rotate(rotation.current);
+
+      // dibujar graticule (líneas)
+      ctx.beginPath();
+      path(d3geo.geoGraticule10());
+      ctx.strokeStyle = "rgba(148,163,184,0.7)";
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+
+      // dibujar países
+      countries.features.forEach((f) => {
+        const isMexico = f.id === "484" || f.properties?.name === "Mexico";
+        ctx.beginPath();
+        path(f);
+        ctx.fillStyle = isMexico ? "#e30613" : "#e2e8f0";
+        ctx.fill();
+        ctx.strokeStyle = "#64748b";
+        ctx.lineWidth = 0.3;
+        ctx.stroke();
+      });
+    };
+
+    let raf = 0;
+    const tick = () => {
+      rotation.current[0] += velocity.current; // auto-rotación
+      render();
+      raf = requestAnimationFrame(tick);
+    };
+
+    tick();
+    return () => cancelAnimationFrame(raf);
+  }, [countries]);
+
   // drag con mouse
-  const onPointerDown = (clientX: number) => {
-    pointerX.current = clientX;
+  const onPointerDown = (e: React.PointerEvent) => {
+    pointerX.current = e.clientX;
     window.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("pointerup", handlePointerUp);
   };
@@ -62,63 +105,25 @@ export function GlobeSVG(props: GlobeSVGProps) {
     if (pointerX.current !== null) {
       const delta = e.clientX - pointerX.current;
       pointerX.current = e.clientX;
-
-      // actualiza la rotación directamente
-      setRotation(([λ, φ, γ]) => [λ + (delta / DAMPING) * 180, φ, γ]);
-
-      // ajusta la velocidad momentánea según el drag
-      velocity.current = (delta / DAMPING) * 180;
+      rotation.current[0] += (delta / DAMPING) * 180;
+      velocity.current = (delta / DAMPING) * 180; // inercia
     }
   };
 
   const handlePointerUp = () => {
     pointerX.current = null;
-    velocity.current = ROT_SPEED; // vuelve a auto-rotación normal
+    velocity.current = ROT_SPEED; // volver a velocidad normal
     window.removeEventListener("pointermove", handlePointerMove);
     window.removeEventListener("pointerup", handlePointerUp);
   };
 
-  // proyección con rotación actual
-  const projection = d3geo
-    .geoOrthographic()
-    .translate([BASE_SIZE / 2, BASE_SIZE / 2])
-    .scale(BASE_SIZE * 0.5)
-    .clipAngle(90)
-    .rotate(rotation);
-
-  const pathGenerator = d3geo.geoPath(projection);
-
   return (
-    <svg
+    <canvas
+      ref={canvasRef}
+      width={BASE_SIZE}
+      height={BASE_SIZE}
       {...props}
-      viewBox={`0 0 ${BASE_SIZE} ${BASE_SIZE}`}
-      className={props.className}
-      style={{ display: "block", margin: "0 auto", userSelect: "none" }}
-      onPointerDown={(e) => onPointerDown(e.clientX)}
-    >
-      {/* líneas de graticule */}
-      <path
-        d={pathGenerator(d3geo.geoGraticule10()) ?? ""}
-        fill="none"
-        stroke="#94a3b8"
-        strokeWidth={0.5}
-        opacity={0.7}
-      />
-
-      {/* países */}
-      {countries?.features.map((f, i) => {
-        const isMexico = f.id === "484" || f.properties?.name === "Mexico"; // por si acaso
-
-        return (
-          <path
-            key={i}
-            d={pathGenerator(f) ?? ""}
-            fill={isMexico ? "#e30613" : "#e2e8f0"} // rojo claro si es México
-            stroke="#64748b"
-            strokeWidth={0.3}
-          />
-        );
-      })}
-    </svg>
+      onPointerDown={onPointerDown}
+    />
   );
 }
