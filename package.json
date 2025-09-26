@@ -19,6 +19,7 @@
         "clsx": "^2.1.1",
         "d3-geo": "^3.1.1",
         "motion": "^12.23.16",
+        "next": "^15.5.4",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-router-dom": "^7.8.2",
@@ -62,11 +63,7 @@
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
-            "npm run format",
             "npm run lint:fix"
-        ],
-        "*.{css,md.json}": [
-            "npm run format"
         ]
     }
 }

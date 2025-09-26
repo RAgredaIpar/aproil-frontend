@@ -1,5 +1,6 @@
 import Confiabilidad from "./_components/Confiabilidad.tsx";
 import Inicio from "./_components/Inicio.tsx";
+import Tecnologia from "./_components/Tecnologia";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
         <Inicio />
       </main>
       <Confiabilidad />
+        <Tecnologia />
     </>
   );
 }
