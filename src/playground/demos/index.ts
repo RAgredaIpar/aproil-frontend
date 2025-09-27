@@ -5,5 +5,6 @@ export const demos = [
         loader: () => import("./AnimatedTestimonialsDemo"),
     },
     {path: "loader", title: "Loader", loader: () => import("./LoaderDemo")},
-    {path: 'carousel', title: 'Carousel', loader: () => import('./AppleCardsCarouselDemo')}
+    {path: 'carousel', title: 'Carousel', loader: () => import('./AppleCardsCarouselDemo')},
+    { path: 'container-scroll', title: 'ContainerScroll', loader: () => import('./ContainerScrollAnimationDemo')}
 ] as const;

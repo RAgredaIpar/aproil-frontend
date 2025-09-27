@@ -3,7 +3,7 @@ import { WobbleCard, Lamp } from "@components/aceternity"
 
 const Servicios = () => {
     return (
-        <section className="w-full min-h-dvh">
+        <section className="w-full ">
             <div className="container mx-auto flex flex-col px-4 pb-10">
                 <div className="flex justify-center">
                     <Lamp />
