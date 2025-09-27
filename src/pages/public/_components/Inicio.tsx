@@ -3,7 +3,7 @@ import { GlobeSVG, ShineBorder } from "@components/magic-ui";
 
 const Inicio = () => {
   return (
-    <div className="w-full">
+    <div className="w-full min-h-dvh container mx-auto px-4 py-4">
       <div className="relative">
         <div className="w-full flex justify-center">
           <div className="relative max-w-7xl px-5 w-full">

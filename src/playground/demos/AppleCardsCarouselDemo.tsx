@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel, Card } from "@components/aceternity/AppleCardsCarousel/apple-cards-carousel";
+import { Carousel, Card } from "@components/aceternity";
 
 export default function AppleCardsCarouselDemo() {
     const cards = data.map((card, index) => (

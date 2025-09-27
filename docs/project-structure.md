@@ -38,8 +38,8 @@ Contiene la configuración global de la aplicación.
 
 - **routes/**  
   Organización de las páginas según el tipo de acceso.
-    - **public/** → Páginas públicas (landing, login, registro, etc.).
-    - **private/** → Páginas privadas (dashboard, panel de administración, etc.).
+  - **public/** → Páginas públicas (landing, login, registro, etc.).
+  - **private/** → Páginas privadas (dashboard, panel de administración, etc.).
 
 - **router.tsx**  
   Configuración principal del enrutador. Utiliza `paths.ts` para centralizar los paths y evitar rutas hardcodeadas.

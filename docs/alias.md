@@ -29,8 +29,8 @@ Los imports deben estar ordenados en este orden:
 
 ```tsx
 // ❌ Evitar
-import Button from '../../../components/ui/Button'
+import Button from "../../../components/ui/Button";
 
 // ✅ Usar alias
-import Button from '@components/ui/Button'
+import Button from "@components/ui/Button";
 ```

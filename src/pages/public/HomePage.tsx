@@ -1,15 +1,17 @@
 import Confiabilidad from "./_components/Confiabilidad.tsx";
 import Inicio from "./_components/Inicio.tsx";
-import Tecnologia from "./_components/Tecnologia";
+import Servicios from "./_components/Servicios.tsx";
+import Tecnologia from "./_components/Tecnologia.tsx";
 
 export default function HomePage() {
-  return (
-    <>
-      <main className="min-h-dvh container mx-auto px-4 py-4">
-        <Inicio />
-      </main>
-      <Confiabilidad />
-        <Tecnologia />
-    </>
-  );
+    return (
+        <>
+            <main className="bg-[#F9F9F9]">
+                <Inicio/>
+                <Confiabilidad/>
+                <Tecnologia/>
+                <Servicios/>
+            </main>
+        </>
+    );
 }

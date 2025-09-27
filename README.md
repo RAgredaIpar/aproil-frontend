@@ -6,18 +6,18 @@ Este repositorio contiene la configuración inicial y los primeros componentes d
 ## 🚀 Instalación
 
 1. Clonar el repositorio:
-    ```bash
-    git clone https://github.com/RAgredaIpar/aproil-frontend.git
-    cd aproil-frontend
-    ```
+   ```bash
+   git clone https://github.com/RAgredaIpar/aproil-frontend.git
+   cd aproil-frontend
+   ```
 2. Instalar dependencias:
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 3. Ejecutar en modo desarrollo:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 ## 🛠️ Tecnologías
 

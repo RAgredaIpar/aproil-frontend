@@ -1,46 +1,46 @@
-import { Carousel, Card } from "@components/aceternity/AppleCardsCarousel/apple-cards-carousel";
+import { Carousel, Card } from "@components/aceternity";
 
 const Tecnologia = () => {
-        const cards = [
-            {
-                src: "https://via.placeholder.com/600x400",
-                title: "Tecnología Avanzada",
-                category: "Innovación",
-                content: (
-                    <p>
-                        Esta es una tarjeta de ejemplo. Aquí puedes poner descripciones,
-                        texto largo o incluso componentes React.
-                    </p>
-                ),
-            },
-            {
-                src: "https://via.placeholder.com/600x400",
-                title: "Escalabilidad",
-                category: "Infraestructura",
-                content: (
-                    <p>
-                        Otra tarjeta de prueba. Más adelante puedes reemplazar estas imágenes
-                        y textos con el contenido real.
-                    </p>
-                ),
-            },
-            {
-                src: "https://via.placeholder.com/600x400",
-                title: "Integración",
-                category: "Software",
-                content: (
-                    <p>
-                        Esta tarjeta muestra cómo el carrusel maneja contenido dinámico y
-                        ampliable.
-                    </p>
-                ),
-            },
-        ]
-        const items = cards.map((card, index) => (
-            <Card key={index} card={card} index={index} layout />
-        ))
+    const cards = [
+        {
+            src: "https://via.placeholder.com/600x400",
+            title: "Tecnología Avanzada",
+            category: "Innovación",
+            content: (
+                <p>
+                    Esta es una tarjeta de ejemplo. Aquí puedes poner descripciones,
+                    texto largo o incluso componentes React.
+                </p>
+            ),
+        },
+        {
+            src: "https://via.placeholder.com/600x400",
+            title: "Escalabilidad",
+            category: "Infraestructura",
+            content: (
+                <p>
+                    Otra tarjeta de prueba. Más adelante puedes reemplazar estas imágenes
+                    y textos con el contenido real.
+                </p>
+            ),
+        },
+        {
+            src: "https://via.placeholder.com/600x400",
+            title: "Integración",
+            category: "Software",
+            content: (
+                <p>
+                    Esta tarjeta muestra cómo el carrusel maneja contenido dinámico y
+                    ampliable.
+                </p>
+            ),
+        },
+    ]
+    const items = cards.map((card, index) => (
+        <Card key={index} card={card} index={index} layout />
+    ))
     return (
-        <div>
+        <div className="pt-15">
             <div className="container mx-auto
             lg:px-16
             xl:px-30
@@ -50,7 +50,7 @@ const Tecnologia = () => {
                 sm:text-5xl
                 lg:text-left
                 ">
-                    NUESTRA TECNOLOGIA
+                    NUESTRA TECNOLOGÍA
                 </h1>
                 <p className="
                 font-['Nunito_Sans'] text-gray-900 text-lg
