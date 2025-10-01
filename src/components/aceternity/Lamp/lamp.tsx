@@ -14,7 +14,7 @@ export function Lamp() {
                     duration: 0.8,
                     ease: "easeInOut",
                 }}
-                className="bg-gradient-to-br from-slate-400 to-black bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+                className="pb-10 bg-gradient-to-br from-slate-400 to-black bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
             >
 
                 <p className="uppercase text-3xl sm:text-4xl">conoce nuestros</p>

@@ -16,7 +16,7 @@ const Contacto = () => {
                     <div className="uppercase xl:text-7xl lg:text-[65px] md:text-5xl sm:text-4xl text-[20px] text-center font-extrabold">
                         Hablemos de {" "}
                         <PointerHighlight
-                            rectangleClassName="uppercase border-4 dark:border-[#E30613] dark:border-[#E30613]">
+                            rectangleClassName="uppercase border-2 dark:border-[#E30613] dark:border-[#E30613]">
                             <span>soluciones</span>
                         </PointerHighlight>
                     </div>

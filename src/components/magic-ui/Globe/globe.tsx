@@ -14,7 +14,7 @@ const BASE_SIZE = 500;
 const ROT_SPEED = 0.3;
 const DAMPING = 1400;
 
-const highlightedCountriesByName = ["Mexico", "Peru", "Guatemala", "El Salvador", "Dominican Rep."];
+const highlightedCountriesByName = ["Mexico", "Peru", "Guatemala", "El Salvador", "Dominican Rep.", "Ecuador"];
 
 type GlobeSVGProps = ComponentPropsWithoutRef<"canvas">;
 

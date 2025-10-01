@@ -3,9 +3,6 @@ import { cn } from "@lib/utils";
 import { motion } from "motion/react";
 import React, { useRef, useEffect, useState } from "react";
 
-const EXTRA_X = 15;
-const EXTRA_Y = 10;
-
 export function PointerHighlight({
                                      children,
                                      rectangleClassName,
@@ -19,7 +16,16 @@ export function PointerHighlight({
 }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkSize = () => setIsMobile(window.innerWidth < 640);
+        checkSize();
+        window.addEventListener("resize", checkSize);
+        return () => window.removeEventListener("resize", checkSize);
+    }, []);
 
+    const EXTRA_X = isMobile ? 4 : 10;
+    const EXTRA_Y = isMobile ? 4 : 10;
     useEffect(() => {
         if (containerRef.current) {
             const { width, height } = containerRef.current.getBoundingClientRect();
@@ -59,7 +65,7 @@ export function PointerHighlight({
                 >
                     <motion.div
                         className={cn(
-                            "absolute border border-neutral-800 dark:border-neutral-200",
+                            "absolute md:border-[5px] border-neutral-800 dark:border-neutral-200",
                             rectangleClassName,
                         )}
                         initial={{
@@ -69,10 +75,8 @@ export function PointerHighlight({
                             height: 0,
                         }}
                         whileInView={{
-                            left: -EXTRA_X / 2,
-                            top: -EXTRA_Y / 2,
                             width: dimensions.width + EXTRA_X,
-                            height: dimensions.height + EXTRA_Y - 3,
+                            height: dimensions.height + EXTRA_Y - 5,
                         }}
                         transition={{
                             duration: 1,

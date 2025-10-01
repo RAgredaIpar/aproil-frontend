@@ -113,16 +113,14 @@ const Inicio = () => {
                             md:text-4xl
                             lg:text-5xl
                             xl:text-5xl xl:pl-5
-                            2xl:text-6xl 2xl:mt-15 2xl:pl-13
-                            bg-gradient-to-br from-slate-600 to-black bg-clip-text text-transparent"
+                            2xl:text-6xl 2xl:mt-15 2xl:pl-13"
             >
               BIENVENIDOS A <br /> APROIL LUBRICANTS
             </h1>
           </div>
 
           <div className="block 2xl:hidden lg:w-1/2 xl:w-200 border-t border-[#e30613] 2xl:-my-4" />
-
-          <div className="flex flex-col lg:absolute md:right-0 md:top-0 text-left 2xl:mt-18">
+          <div className="md:hidden flex flex-col lg:absolute md:right-0 md:top-0 text-left 2xl:mt-18">
             <span
               className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
                             text-xl"
@@ -178,7 +176,7 @@ const Inicio = () => {
 
               <a
                 href="/industrias"
-                className="mt-4 text-sm italic font-bold max-w-sm
+                className="mt-4 text-sm italic font-bold max-w-max
                                    sm:text-base
                                    md:text-lg
                                    lg:text-2xl
@@ -188,6 +186,28 @@ const Inicio = () => {
                 POTENCIA CON APROIL →
               </a>
             </div>
+              <div className="lg:hidden flex flex-col lg:absolute md:right-0 md:top-0 text-center 2xl:mt-18 pt-10">
+                  <span
+                      className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
+                      text-xl">
+                      DISTRIBUYENDO EN
+                  </span>
+                  <span
+                      className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
+                      text-lg
+                      sm:text-xl
+                      md:text-3xl">
+                      MÉXICO Y
+            </span>
+                  <span
+                      className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
+                            text-lg
+                            sm:text-xl
+                            md:text-2xl"
+                  >
+              PARTE DE LATINOAMÉRICA
+            </span>
+              </div>
             <div className="flex justify-center lg:justify-end">
               <GlobeSVG
                 className="

@@ -40,7 +40,7 @@ const Tecnologia = () => {
         <Card key={index} card={card} index={index} layout />
     ))
     return (
-        <div className="pt-15">
+        <div className="pt-15 pb-10">
             <div className="container mx-auto
             lg:px-16
             xl:px-30

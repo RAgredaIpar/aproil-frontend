@@ -7,8 +7,7 @@ const Historias = () => {
             <div className="flex w-full flex-col md:flex-row items-center gap-6 lg:w-auto lg:flex-row">
                 <img src={LubricacionIndustrial} alt="Industrial"
                     className="w-full max-w-[400px] lg:max-w-[500px] object-contain"/>
-                <div className="flex flex-col items-center gap-4 text-center">
-
+                <div className="flex flex-col items-center text-center">
                     <span className="px-0 text-[20pt] font-medium text-[#848C99] sm:px-5 sm:text-[25pt] lg:px-20 xl:px-15 2xl:px-10 2xl:text-[30pt]">
                         Conoce las historias
                     </span>

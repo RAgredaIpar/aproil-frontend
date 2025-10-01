@@ -20,7 +20,7 @@ export default function Footer() {
                                 Aproil Lubricants
                             </p>
 
-                            <p className="aproil-font mt-2 text-[0.95rem] leading-snug uppercase tracking-wide">
+                            <p className="aproil-font mt-2 text-[0.90rem] leading-snug uppercase tracking-wide">
                                 Designed to perform,
                                 <br/>
                                 engineered to last.
@@ -43,9 +43,9 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="sm:text-[16px] text-[12px]">
                         <h4 className="mb-5 font-semibold">Navegación</h4>
-                        <ul className="space-y-0 text-neutral-900">
+                        <ul className="space-y-0 text-neutral-900 max-w-max">
                             <li>
                                 <Link to="/" className="flex items-center gap-2">
                                     <img src={iconInicio} alt="Inicio" className="h-5 w-5"/>
@@ -87,10 +87,10 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="sm:text-[16px] text-[12px]">
                         <h4 className="mb-5 font-semibold">Contacto</h4>
                         <ul className="space-y-3 text-neutral-900">
-                            <li className="flex items-start gap-3">
+                            <li className="flex items-start gap-3 ">
                                 <MapPin className="mt-[2px] h-5 w-5"/>
                                 <span>Línea uno de dirección</span>
                             </li>
@@ -106,7 +106,7 @@ export default function Footer() {
                     </div>
 
 
-                    <div>
+                    <div className="sm:text-[16px] text-[12px]">
                         <h4 className="mb-5 font-semibold">Legales</h4>
                         <ul className="space-y-0 text-neutral-900">
                             <li>
