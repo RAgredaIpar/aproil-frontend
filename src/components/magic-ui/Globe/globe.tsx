@@ -14,6 +14,8 @@ const BASE_SIZE = 500;
 const ROT_SPEED = 0.3;
 const DAMPING = 1400;
 
+const highlightedCountriesByName = ["Mexico", "Peru", "Guatemala", "El Salvador", "Dominican Rep."];
+
 type GlobeSVGProps = ComponentPropsWithoutRef<"canvas">;
 
 export function GlobeSVG(props: GlobeSVGProps) {
@@ -71,16 +73,18 @@ export function GlobeSVG(props: GlobeSVGProps) {
       ctx.stroke();
 
       // dibujar países
-      countries.features.forEach((f) => {
-        const isMexico = f.id === "484" || f.properties?.name === "Mexico";
-        ctx.beginPath();
-        path(f);
-        ctx.fillStyle = isMexico ? "#e30613" : "#e2e8f0";
-        ctx.fill();
-        ctx.strokeStyle = "#64748b";
-        ctx.lineWidth = 0.3;
-        ctx.stroke();
-      });
+        countries.features.forEach((f) => {
+            const name = f.properties?.name;
+            const isHighlighted = highlightedCountriesByName.includes(name);
+
+            ctx.beginPath();
+            path(f);
+            ctx.fillStyle = isHighlighted ? "#e30613" : "#e2e8f0";
+            ctx.fill();
+            ctx.strokeStyle = "#64748b";
+            ctx.lineWidth = 0.3;
+            ctx.stroke();
+        });
     };
 
     let raf = 0;

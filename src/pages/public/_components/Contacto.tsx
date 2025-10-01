@@ -13,7 +13,7 @@ const Contacto = () => {
             sm:pl-10 sm:py-5
             py-10">
                 <div className="relative overflow-visible whitespace-nowrap z-10">
-                    <div className="uppercase xl:text-7xl lg:text-[65px] md:text-5xl sm:text-5xl text-[20px] text-center font-extrabold">
+                    <div className="uppercase xl:text-7xl lg:text-[65px] md:text-5xl sm:text-4xl text-[20px] text-center font-extrabold">
                         Hablemos de {" "}
                         <PointerHighlight
                             rectangleClassName="uppercase border-4 dark:border-[#E30613] dark:border-[#E30613]">
@@ -31,7 +31,7 @@ const Contacto = () => {
                         className="object-contain w-full"
                     />
                 </div>
-                <div className="text-gray-500 md:pb-20 sm:pb-10 max-w-3xl sm:text-lef text-center sm:px-0 px-2
+                <div className="text-gray-500 md:pb-20 sm:pb-10 max-w-3xl sm:text-left text-center sm:px-0 px-2
                 2xl:text-[32px] 2xl:pt-10
                 xl:text-[28px] xl:pt-15
                 lg:text-[40px] lg:pt-40
@@ -50,7 +50,7 @@ const Contacto = () => {
                 <img
                     src={tamborAproil}
                     alt="Tambor Aproil"
-                    className="object-contain max-w-none 2xl:w-800 lg:w-160 md:w-130"
+                    className="object-contain max-w-none 2xl:w-800 lg:w-160 md:w-130 sm:w-90"
                 />
             </div>
 

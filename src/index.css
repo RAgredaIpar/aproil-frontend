@@ -30,3 +30,18 @@ body {
     }
   }
 }
+
+@theme inline {
+    --duration: 40s;
+    --direction: normal;
+    --fill: forwards;
+
+    --animate-scroll: scroll var(--duration) linear infinite var(--direction) var(--fill);
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 0.5rem));
+        }
+    }
+}
+
