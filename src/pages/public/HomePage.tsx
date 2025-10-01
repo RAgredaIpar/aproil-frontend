@@ -1,4 +1,5 @@
 import Confiabilidad from "./_components/Confiabilidad.tsx";
+import Contacto from "./_components/Contacto.tsx";
 import Distribuidor from "./_components/Distribuidor.tsx";
 import Inicio from "./_components/Inicio.tsx";
 import Servicios from "./_components/Servicios.tsx";
@@ -13,6 +14,7 @@ export default function HomePage() {
                 <Tecnologia/>
                 <Servicios/>
                 <Distribuidor/>
+                <Contacto/>
             </main>
         </>
     );

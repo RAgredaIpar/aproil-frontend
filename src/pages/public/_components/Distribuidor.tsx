@@ -1,4 +1,4 @@
-import { DistribuidorLubricantes } from "@assets/home-page"
+import { distribuidorLubricantes } from "@assets/home-page"
 import { ContainerScroll } from "@components/aceternity"
 
 const Distribuidor = () => {
@@ -21,7 +21,7 @@ const Distribuidor = () => {
                         FUERZA DE APROIL LUBRICANTS.
                     </p>
                 </div>}>
-                <img src={DistribuidorLubricantes} alt="Distribuidor" />
+                <img src={distribuidorLubricantes} alt="Distribuidor" />
             </ContainerScroll>
         </section>
     )

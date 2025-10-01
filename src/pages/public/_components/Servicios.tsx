@@ -4,13 +4,13 @@ import { WobbleCard, Lamp } from "@components/aceternity"
 const Servicios = () => {
     return (
         <section className="w-full ">
-            <div className="container mx-auto flex flex-col px-4 pb-10">
+            <div className="container mx-auto flex flex-col lg:px-7 px-5 pb-10">
                 <div className="flex justify-center">
                     <Lamp />
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
                     <WobbleCard
-                        containerClassName="col-span-1 lg:col-span-2 h-full bg-[#E30613] min-h-[370px] lg:min-h-[300px] xl:min-h-[300px]"
+                        containerClassName="col-span-1 lg:col-span-2 h-full bg-[#d30613] min-h-[370px] lg:min-h-[300px] xl:min-h-[300px]"
                     >
                         <div className="xl:max-w-md lg:max-w-sm md:max-w-md sm:max-w-sm">
                             <h2 className="uppercase aproil-font text-left text-balance text-3xl lg:text-4xl font-semibold text-white">

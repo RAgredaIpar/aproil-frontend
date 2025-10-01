@@ -3,7 +3,7 @@ import { WordRotate } from "@components/magic-ui";
 
 const Confiabilidad = () => {
   return (
-    <div>
+    <div className="pt-10 pb-20">
       <div className="block lg:hidden text-left mt-15">
         <p
           className="font-extrabold uppercase text-gray-500 text-center
@@ -45,7 +45,7 @@ const Confiabilidad = () => {
           Nuestro compromiso
         </h3>
         <div
-          className="flex
+          className="flex my-5
             2xl:w-2/3
             xl:w-6xl
             lg:w-4xl"

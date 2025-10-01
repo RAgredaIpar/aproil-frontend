@@ -3,7 +3,6 @@ import {
   iconContacto,
   iconIndustrias,
   iconProductos,
-  iconServicios,
   iconInicio,
   iconBuscar,
 } from "@assets/header";
@@ -71,21 +70,6 @@ export default function Header() {
               >
                 <img src={iconIndustrias} alt="Inicio" className="w-8 h-8" />
                 Industrias
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/servicios"
-                className={({ isActive }) =>
-                  `flex flex-col items-center gap-2 ${
-                    isActive
-                      ? "font-semibold text-gray-900"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`
-                }
-              >
-                <img src={iconServicios} alt="Inicio" className="w-8 h-8" />
-                Servicios
               </NavLink>
             </li>
             <li>

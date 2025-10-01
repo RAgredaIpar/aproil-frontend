@@ -102,8 +102,8 @@ const Inicio = () => {
       </div>
 
       <section className="relative w-full max-w-screen-xl mx-auto px-4 lg:py-12 mt-12">
-        <div className="absolute top-0 left-0 -z-10 hidden 2xl:block">
-          <CurvedLine className="scale-[2] origin-top-left -translate-x-10 -translate-y-[60px] " />
+        <div className="absolute top-0 left-0 z-0 hidden 2xl:block">
+            <CurvedLine className="scale-[2] origin-top-left -translate-x-10 -translate-y-[60px]" />
         </div>
         <div className="relative flex-1 flex flex-col gap-3 sm:gap-5 md:gap-5 lg:gap-10 2xl:gap-15">
           <div>
@@ -114,7 +114,7 @@ const Inicio = () => {
                             lg:text-5xl
                             xl:text-5xl xl:pl-5
                             2xl:text-6xl 2xl:mt-15 2xl:pl-13
-                            text-gray-900"
+                            bg-gradient-to-br from-slate-600 to-black bg-clip-text text-transparent"
             >
               BIENVENIDOS A <br /> APROIL LUBRICANTS
             </h1>
