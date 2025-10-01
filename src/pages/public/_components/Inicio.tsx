@@ -70,7 +70,7 @@ const Inicio = () => {
     lg:px-12 lg:py-3 lg:text-base
     sm:px-10 sm:py-3 sm:text-sm
     px-2 py-2 text-xs
-    bg-black text-[#e30613] font-extrabold uppercase tracking-[.3px]
+    bg-gray-200 text-[#e30613] font-extrabold uppercase tracking-[.3px]
     leading-snug
     2xl:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
     xl:[clip-path:polygon(16px_0,100%_0,calc(100%-16px)_100%,0_100%)]
