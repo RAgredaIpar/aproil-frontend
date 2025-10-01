@@ -120,7 +120,7 @@ const Inicio = () => {
           </div>
 
           <div className="block 2xl:hidden lg:w-1/2 xl:w-200 border-t border-[#e30613] 2xl:-my-4" />
-          <div className="md:hidden flex flex-col lg:absolute md:right-0 md:top-0 text-left 2xl:mt-18">
+          <div className="hidden lg:flex flex-col lg:absolute md:right-0 md:top-0 text-left 2xl:mt-18">
             <span
               className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
                             text-xl"
