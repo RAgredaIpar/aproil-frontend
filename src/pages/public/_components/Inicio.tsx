@@ -70,7 +70,7 @@ const Inicio = () => {
     lg:px-12 lg:py-3 lg:text-base
     sm:px-10 sm:py-3 sm:text-sm
     px-2 py-2 text-xs
-    bg-gray-200 text-[#e30613] font-extrabold uppercase tracking-[.3px]
+    bg-[#5e6064] text-[white] font-extrabold uppercase tracking-[.3px]
     leading-snug
     2xl:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
     xl:[clip-path:polygon(16px_0,100%_0,calc(100%-16px)_100%,0_100%)]
@@ -85,12 +85,12 @@ const Inicio = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-10 xl:h-10"
                 viewBox="0 0 24 24"
-                fill="white"
+                fill="#5e6064"
               >
-                <circle cx="12" cy="12" r="12" fill="#e30613" />
+                <circle cx="12" cy="12" r="12" fill="white" />
                 <path
                   d="M10 7l5 5-5 5"
-                  stroke="white"
+                  stroke="#5e6064"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
