@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="45675281-a35b-4e93-a325-b9df2c173fbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.husky/commit-msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.husky/pre-commit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commitlint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/alias.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/commits.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/project-structure.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo-aproil.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mini-logo-aproil.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/noise.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/video-corporativo-aproil.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routes.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/footer/icon-9001.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/footer/icon-mexico.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/footer/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/aproil-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/icon-buscar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/icon-contacto.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/icon-industria.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/icon-inicio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/icon-product.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/icon-servicio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/header/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/aceite-para-rendimiento.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/capacitaciones-especializadas.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/curv-line.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/distribuidor-de-lubricantes.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/soluciones-lubricacion-industrial.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/tambor-aproil.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home-page/visita-tecnica.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/AnimatedTestimonials/animated-testimonials.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/AppleCardsCarousel/apple-cards-carousel.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/AppleCardsCarousel/use-outside-click.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/ContainerScrollAnimation/container-scroll-animation.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/InfiniteMovingCards/infinite-moving-cards.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/Lamp/lamp.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/Loader/loader.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/PointerHighlight/pointer-highlight.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/WobbleCard/wobble-card.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aceternity/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/magic-ui/Globe/globe.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/magic-ui/InteractiveHoverButton/interactive-hover-button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/magic-ui/ShineBorder/shine-border.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/magic-ui/WordRotate/word-rotate.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/magic-ui/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/HomePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Confiabilidad.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Contacto.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Distribuidor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Historias.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Inicio.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Servicios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_components/Tecnologia.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/public/_layout/PublicLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/demos/AnimatedTestimonialsDemo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/demos/AppleCardsCarouselDemo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/demos/ContainerScrollAnimationDemo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/demos/InfiniteMovingCardsDemo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/demos/LoaderDemo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/demos/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/guard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playground/routes.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="32I6zmOYlLFriBUeN1hWCHhfK2l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;port&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SEBASTIAN/Desktop/Nueva carpeta (3)/aproil-frontend/src/docs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\SEBASTIAN\\Desktop\\Nueva carpeta (3)\\aproil-frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SEBASTIAN\Desktop\Nueva carpeta (3)\aproil-frontend\src\docs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SEBASTIAN\Desktop\Nueva carpeta (3)\aproil-frontend\src\assets\home-page" />
+      <recent name="C:\Users\SEBASTIAN\Desktop\Nueva carpeta (3)\aproil-frontend\src\components\magic-ui\Globe" />
+      <recent name="C:\Users\SEBASTIAN\Desktop\Nueva carpeta (3)\aproil-frontend\src\assets" />
+      <recent name="C:\Users\SEBASTIAN\Desktop\Nueva carpeta (3)\aproil-frontend\src\components\aceternity\globe" />
+      <recent name="C:\Users\SEBASTIAN\Desktop\Nueva carpeta (3)\aproil-frontend" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.lint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-WS-252.25557.126" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45675281-a35b-4e93-a325-b9df2c173fbe" name="Changes" comment="" />
+      <created>1757096003521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757096003521</updated>
+      <workItem from="1757096004740" duration="264000" />
+      <workItem from="1757096356120" duration="1485000" />
+      <workItem from="1757098192173" duration="904000" />
+      <workItem from="1757099566542" duration="4223000" />
+      <workItem from="1757103888795" duration="8408000" />
+      <workItem from="1757382738487" duration="2808000" />
+      <workItem from="1757474602833" duration="1103000" />
+      <workItem from="1757505912328" duration="2069000" />
+      <workItem from="1757542301340" duration="787000" />
+      <workItem from="1758043704834" duration="1883000" />
+      <workItem from="1758047405244" duration="502000" />
+      <workItem from="1758077041422" duration="5588000" />
+      <workItem from="1758087283593" duration="328000" />
+      <workItem from="1758091189402" duration="2341000" />
+      <workItem from="1758110463559" duration="6384000" />
+      <workItem from="1758125948425" duration="5038000" />
+      <workItem from="1758146633522" duration="4987000" />
+      <workItem from="1758152238325" duration="3216000" />
+      <workItem from="1758156566963" duration="3844000" />
+      <workItem from="1758160444319" duration="14370000" />
+      <workItem from="1758211439945" duration="5086000" />
+      <workItem from="1758244109710" duration="9444000" />
+      <workItem from="1758299720492" duration="8117000" />
+      <workItem from="1758318727609" duration="16612000" />
+      <workItem from="1758338472809" duration="2259000" />
+      <workItem from="1758412802739" duration="807000" />
+      <workItem from="1758415674159" duration="1902000" />
+      <workItem from="1758421876120" duration="9478000" />
+      <workItem from="1758474355565" duration="3266000" />
+      <workItem from="1758499477632" duration="4023000" />
+      <workItem from="1758678420420" duration="5361000" />
+      <workItem from="1758685960110" duration="2687000" />
+      <workItem from="1758715729631" duration="630000" />
+      <workItem from="1758746589911" duration="1389000" />
+      <workItem from="1758853778880" duration="8468000" />
+      <workItem from="1758911106719" duration="383000" />
+      <workItem from="1758920620021" duration="12331000" />
+      <workItem from="1758934028115" duration="3706000" />
+      <workItem from="1758974811854" duration="1917000" />
+      <workItem from="1758988971261" duration="2527000" />
+      <workItem from="1758994189676" duration="6409000" />
+      <workItem from="1759188240255" duration="197000" />
+      <workItem from="1759334626673" duration="536000" />
+      <workItem from="1759335229717" duration="11501000" />
+      <workItem from="1759354938069" duration="3344000" />
+      <workItem from="1759358397084" duration="1503000" />
+      <workItem from="1759453287787" duration="31000" />
+      <workItem from="1759453842528" duration="4049000" />
+      <workItem from="1759464710791" duration="1215000" />
+      <workItem from="1759466393034" duration="1967000" />
+      <workItem from="1759468486328" duration="6025000" />
+      <workItem from="1759510828077" duration="1817000" />
+      <workItem from="1759528885095" duration="778000" />
+      <workItem from="1759532252257" duration="542000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

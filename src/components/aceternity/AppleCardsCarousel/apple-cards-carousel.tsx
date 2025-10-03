@@ -1,6 +1,6 @@
 "use client";
 
-import { useOutsideClick } from "@components/aceternity/AppleCardsCarousel/use-outside-click.ts";
+import { useOutsideClick } from "@components/aceternity/AppleCardsCarousel/use-outside-click";
 import { cn } from "@lib/utils";
 import {
     IconArrowNarrowLeft,
@@ -203,21 +203,22 @@ export const Card = ({
                             >
                                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
                             </button>
-
-                            <motion.p
-                                layoutId={layout ? `category-${card.title}` : undefined}
-                                className="text-base font-medium text-black dark:text-white"
-                            >
-                                {card.category}
-                            </motion.p>
-
-                            <motion.p
-                                layoutId={layout ? `title-${card.title}` : undefined}
-                                className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white"
-                            >
-                                {card.title}
-                            </motion.p>
-
+                            <div className="relative">
+                                <motion.p
+                                    layoutId={layout ? `category-${card.title}` : undefined}
+                                    className="relative text-base font-medium text-black dark:text-white"
+                                >
+                                    {card.category}
+                                </motion.p>
+                            </div>
+                            <div className="relative">
+                                <motion.p
+                                    layoutId={layout ? `title-${card.title}` : undefined}
+                                    className="relative mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white"
+                                >
+                                    {card.title}
+                                </motion.p>
+                            </div>
                             <div className="py-10">{card.content}</div>
                         </motion.div>
                     </div>
@@ -229,9 +230,9 @@ export const Card = ({
                 layoutId={layout ? `card-${card.title}` : undefined}
                 onClick={handleOpen}
                 className="
-                relative z-10 flex flex-col items-start justify-start
-                overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900
-                h-64 w-44 sm:h-72 sm:w-56 md:h-[30rem] md:w-80 lg:h-[36rem] lg:w-96"
+    relative z-10 flex flex-col items-start justify-start
+    overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900
+    h-64 w-44 sm:h-72 sm:w-56 md:h-[30rem] md:w-80 lg:h-[36rem] lg:w-96"
             >
                 <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
 
