@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.aproil-font {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* MagicUi/ShineBorder */
+@theme inline {
+    --duration: 14s;
+    --animate-shine: shine var(--duration) infinite linear;
+
+    @keyframes shine {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+}
+
+@theme inline {
+    --duration: 40s;
+    --direction: normal;
+    --fill: forwards;
+
+    --animate-scroll: scroll var(--duration) linear infinite var(--direction) var(--fill);
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 0.5rem));
+        }
+    }
+}
