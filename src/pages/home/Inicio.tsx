@@ -5,6 +5,7 @@ import CurvedLine from "@assets/home-page/curv-line.svg";
 import { ShineBorder } from "@components/magic-ui";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import {useLocale, useTranslations} from "next-intl";
 
 const GlobeSVG = dynamic(()=> import ("@components/magic-ui").then(mod => mod.GlobeSVG),{
     ssr: false,
@@ -12,11 +13,13 @@ const GlobeSVG = dynamic(()=> import ("@components/magic-ui").then(mod => mod.Gl
 })
 
 const Inicio = () => {
+    const t = useTranslations('Home')
+    const locale = useLocale();
     return (
         <div className="w-full min-h-dvh container mx-auto px-4 py-4">
             <div className="relative">
                 <div className="w-full flex justify-center">
-                    <div className="relative max-w-7xl px-5 w-full">
+                    <div className="relative max-w-7xl px-5 w-full z-0">
                         <ShineBorder
                             shineColor={["#ffffff", "#e30613", "#ffffff"]}
                             borderWidth={3}
@@ -43,8 +46,8 @@ const Inicio = () => {
                     <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
                         {/* Ribbon rojo */}
                         <div className="relative overflow-visible lg:inline-block w-full lg:w-auto">
-              <span
-                  className=" font-[Nunito_Sans]
+                            <span
+                                className=" font-[Nunito_Sans]
                                 block w-full
                                 2xl:px-40 2xl:py-5 2xl:text-2xl
                                 xl:px-30 xl:py-4 xl:text-xl
@@ -58,12 +61,11 @@ const Inicio = () => {
                                 lg:[clip-path:polygon(20px_0,100%_0,calc(100%-20px)_100%,0_100%)]
                                 md:[clip-path:polygon(20px_0,100%_0,calc(100%-20px)_100%,0_100%)]
                                 sm:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
-                                [clip-path:polygon(10px_0,100%_0,calc(100%-10px)_100%,0_100%)]"
-              >
-                LUBRICANTES ESPECIALIZADOS,
-                <br />
-                DISEÑADOS PARA TU INDUSTRIA.
-              </span>
+                                [clip-path:polygon(10px_0,100%_0,calc(100%-10px)_100%,0_100%)]">
+                                {t('DESIGN1')}
+                                <br />
+                                {t('DESIGN2')}
+                            </span>
                         </div>
 
                         {/* Ribbon blanco */}
@@ -71,26 +73,24 @@ const Inicio = () => {
                             href="/productos"
                             aria-label="Ir a productos"
                             className="
-    relative z-10 overflow-visible
-    lg:flex-1 xl:flex-1 mt-0
-    lg:ml-[-16px] xl:ml-[-19px]
-    flex items-center justify-between
-    2xl:pl-14 2xl:pr-14 2xl:py-3 2xl:text-xl
-    xl:px-14 xl:py-3 xl:text-xl
-    lg:px-12 lg:py-3 lg:text-base
-    sm:px-10 sm:py-3 sm:text-sm
-    px-2 py-2 text-xs
-    bg-[#5e6064] text-[white] font-extrabold uppercase tracking-[.3px]
-    leading-snug
-    2xl:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
-    xl:[clip-path:polygon(16px_0,100%_0,calc(100%-16px)_100%,0_100%)]
-    lg:[clip-path:polygon(12px_0,100%_0,calc(100%-12px)_100%,0_100%)]
-    sm:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
-    [clip-path:polygon(8px_0,100%_0,calc(100%-8px)_100%,0_100%)]
-  "
+                            relative z-10 overflow-visible
+                            lg:flex-1 xl:flex-1 mt-0
+                            lg:ml-[-16px] xl:ml-[-19px]
+                            flex items-center justify-between
+                            2xl:pl-14 2xl:pr-14 2xl:py-3 2xl:text-xl
+                            xl:px-14 xl:py-3 xl:text-xl
+                            lg:px-12 lg:py-3 lg:text-base
+                            sm:px-10 sm:py-3 sm:text-sm
+                            px-2 py-2 text-xs
+                            bg-[#5e6064] text-[white] font-extrabold uppercase tracking-[.3px]
+                            leading-snug
+                            2xl:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
+                            xl:[clip-path:polygon(16px_0,100%_0,calc(100%-16px)_100%,0_100%)]
+                            lg:[clip-path:polygon(12px_0,100%_0,calc(100%-12px)_100%,0_100%)]
+                            sm:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
+                            [clip-path:polygon(8px_0,100%_0,calc(100%-8px)_100%,0_100%)]"
                         >
-                            <span className="mr-3">CONOCE NUESTROS PRODUCTOS</span>
-
+                            <span className="mr-3">{t('DISCOVER')}</span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-10 xl:h-10"
@@ -122,105 +122,88 @@ const Inicio = () => {
                 <div className="relative flex-1 flex flex-col gap-3 sm:gap-5 md:gap-5 lg:gap-10 2xl:gap-15">
                     <div>
                         <h1
-                            className="font-['Work_Sans'] font-extrabold italic text-3xl
+                            className="aproil-font
                             sm:text-4xl
                             md:text-4xl
                             lg:text-5xl
                             xl:text-5xl xl:pl-5
                             2xl:text-6xl 2xl:mt-15 2xl:pl-13"
                         >
-                            BIENVENIDOS A <br /> APROIL LUBRICANTS
+                            {t('Welcome1')} <br/> {t('Welcome2')}
                         </h1>
                     </div>
 
                     <div className="block 2xl:hidden lg:w-1/2 xl:w-200 border-t border-[#e30613] 2xl:-my-4" />
                     <div className="hidden lg:flex flex-col lg:absolute md:right-0 md:top-0 text-left 2xl:mt-18">
-            <span
-                className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
-                            text-xl"
-            >
-              DISTRIBUYENDO EN
-            </span>
                         <span
-                            className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                                text-lg
-                                sm:text-xl
-                                md:text-3xl"
-                        >
-              MÉXICO Y
-            </span>
+                            className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
+                            text-xl">
+                            {t('DISTRIBUTED1')}
+                        </span>
                         <span
                             className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
                             text-lg
                             sm:text-xl
-                            md:text-2xl"
-                        >
-              PARTE DE LATINOAMÉRICA
-            </span>
+                            md:text-3xl">
+                            {t('DISTRIBUTED2')}
+                        </span>
+                        <span
+                            className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
+                            text-lg
+                            sm:text-xl
+                            md:text-2xl">
+                            {t('DISTRIBUTED3')}
+                        </span>
                     </div>
                     <div className="relative flex flex-col lg:flex-row gap-8 2xl:mt-13">
                         <div
-                            className="flex-1 flex flex-col gap-8 break-words
+                            className={`flex-1 flex flex-col gap-8 break-words
                                 pl-0 text-sm
-                                :pl-4 sm:text-base
+                                sm:pl-4 sm:text-base
                                 md:pl-6 md:text-lg
                                 lg:pl-8 lg:text-xl
                                 2xl:pl-39 2xl:text-xl
                                 font-['Nunito_Sans']
-                                leading-relaxed text-gray-800 max-w-[850px]"
+                                leading-relaxed text-gray-800 max-w-[850px]
+                                ${locale === "en" ? "2xl:pt-2" : "none"}`}
                         >
-                            <p>
-                                Fabricamos lubricantes industriales de alto rendimiento que
-                                maximizan la eficiencia, protegen equipos y prolongan la vida
-                                útil de la maquinaria.
-                            </p>
-                            <p>
-                                Atendemos sectores como minería, energía, construcción,
-                                metalmecánica, alimenticia, transporte y marítima, con
-                                soluciones innovadoras y adaptadas a cada operación. Con
-                                tecnología de vanguardia, altos estándares de calidad y
-                                experiencia técnica, desarrollamos productos que superan
-                                expectativas.
-                            </p>
-                            <p>
-                                Además, contamos con una red de distribución en México y parte
-                                de Latinoamérica, que garantiza cercanía, disponibilidad y
-                                soporte especializado en todo momento.
-                            </p>
+                            <p>{t('Paragraph1')}</p>
+                            <p>{t('Paragraph2')}</p>
+                            <p>{t('Paragraph3')}</p>
 
-                            <a
+                            <Link
                                 href="/industrias"
-                                className="mt-4 text-sm italic font-bold max-w-max
-                                   sm:text-base
-                                   md:text-lg
-                                   lg:text-2xl
-                                   xl:text-3xl
-                                   font-['Work_Sans'] text-[#e30613]"
+                                className={`mt-4 text-sm italic font-bold max-w-max
+                                    sm:text-base
+                                    md:text-lg
+                                    lg:text-2xl
+                                    xl:text-3xl
+                                    font-['Work_Sans'] text-[#e30613]
+                                    ${locale === "en" ? "2xl:mt-10" : "none"}`}
                             >
-                                POTENCIA CON APROIL →
-                            </a>
+                                {t('Power')} →
+                            </Link>
                         </div>
                         <div className="lg:hidden flex flex-col lg:absolute md:right-0 md:top-0 text-center 2xl:mt-18 pt-10">
-                  <span
-                      className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
-                      text-xl">
-                      DISTRIBUYENDO EN
-                  </span>
+                            <span
+                                className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
+                                text-xl">
+                                {t('DISTRIBUTED1')}
+                            </span>
                             <span
                                 className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                      text-lg
-                      sm:text-xl
-                      md:text-3xl">
-                      MÉXICO Y
-            </span>
+                                text-lg
+                                sm:text-xl
+                                md:text-3xl">
+                                {t('DISTRIBUTED2')}
+                            </span>
                             <span
                                 className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                            text-lg
-                            sm:text-xl
-                            md:text-2xl"
-                            >
-              PARTE DE LATINOAMÉRICA
-            </span>
+                                text-lg
+                                sm:text-xl
+                                md:text-2xl">
+                                {t('DISTRIBUTED3')}
+                            </span>
                         </div>
                         <div className="flex justify-center lg:justify-end">
                             <GlobeSVG className="w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] 2xl:w-[400px] 2xl:h-[400px]" />

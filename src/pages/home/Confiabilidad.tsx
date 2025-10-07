@@ -1,8 +1,11 @@
 import { fabricaLubricantes } from "@assets/home-page";
 import { WordRotate } from "@components/magic-ui";
 import Image from "next/image";
+import {useLocale, useTranslations} from "next-intl";
 
 const Confiabilidad = () => {
+    const t = useTranslations('Reliability')
+    const locale = useLocale();
   return (
     <div className="pt-10 pb-20">
       <div className="block lg:hidden text-left mt-15">
@@ -10,29 +13,23 @@ const Confiabilidad = () => {
           className="font-extrabold uppercase text-gray-500 text-center
                 sm:text-3xl text-2xl"
         >
-          Nuestro compromiso
+            {t('COMPROMISE')}
         </p>
         <h2
           className="my-6 font-bold uppercase aproil-font text-center text-[#E30613]
                 sm:text-5xl text-4xl"
         >
-          Maximizar el desempeño <br />
-          en tu industria.
+            {t('INDUSTRY1')} <br />
+            {t('INDUSTRY2')}
         </h2>
         <p className="px-10 sm:text-lg text-base">
-          Nuestra trayectoria, junto con la tecnología de vanguardia y los más
-          altos estándares de calidad, nos permite desarrollar lubricantes que
-          no solo cumplen, sino que superan las expectativas de nuestros
-          clientes.
+            {t('TRAJECTORY1')}
         </p>
         <p className="mt-6 px-10 sm:text-lg text-base">
-          Más que un proveedor, somos un aliado estratégico. Entendemos los
-          desafíos de cada sector y ofrecemos confianza, soporte técnico
-          especializado y soluciones a la medida que impulsan tu crecimiento.
+            {t('TRAJECTORY2')}
         </p>
         <p className="my-6 px-10 sm:text-lg text-base">
-          Nuestro compromiso se sostiene en 4 pilares fundamentales que guían
-          todo lo que hacemos:
+            {t('TRAJECTORY3')}
         </p>
       </div>
       <div className="bg-[#E30613] mt-5 xl:mt-30 py-5 sm:py-8 h-full w-full flex items-center justify-center relative">
@@ -43,7 +40,7 @@ const Confiabilidad = () => {
             lg:-top-10 lg:left-[15%]
             hidden lg:block"
         >
-          Nuestro compromiso
+            {t('COMPROMISE')}
         </h3>
         <div
           className="flex my-5
@@ -52,37 +49,32 @@ const Confiabilidad = () => {
             lg:w-4xl"
         >
           <div
-            className="text-white hidden lg:block
+            className={`text-white hidden lg:block
                 xl:min-w-lg xl:max-w-lg
-                lg:max-w-md lg:min-w-[475px]"
+                lg:max-w-md lg:min-w-[475px]
+                `}
           >
             <h2 className="text-4xl font-bold uppercase aproil-font">
-              Maximizar el desempeño <br />
-              en tu industria.
+                {t('INDUSTRY1')} <br />
+                {t('INDUSTRY2')}
             </h2>
             <p className="mt-8 text-lg">
-              Nuestra trayectoria, junto con la tecnología de vanguardia y los
-              más altos estándares de calidad, nos permite desarrollar
-              lubricantes que no solo cumplen, sino que superan las expectativas
-              de nuestros clientes.
+                {t('TRAJECTORY1')}
             </p>
             <p className="mt-6 text-lg">
-              Más que un proveedor, somos un aliado estratégico. Entendemos los
-              desafíos de cada sector y ofrecemos confianza, soporte técnico
-              especializado y soluciones a la medida que impulsan tu
-              crecimiento.
+                {t('TRAJECTORY2')}
             </p>
             <p className="mt-6 text-lg">
-              Nuestro compromiso se sostiene en 4 pilares fundamentales que
-              guían todo lo que hacemos:
+                {t('TRAJECTORY3')}
             </p>
             <WordRotate
-              className="mt-15 text-6xl aproil-font font-extrabold text-white uppercase text-center"
+              className={`mt-15 text-6xl aproil-font font-extrabold text-white uppercase text-center 
+              ${locale === "en" ? "lg:pt-7" : "none"}`}
               words={[
-                "Confiabilidad",
-                "Expertise",
-                "Vanguardia",
-                "Especialidad",
+                  `${t('RELIABILITY')}`,
+                  `${t('EXPERTISE')}`,
+                  `${t('INNOVATION')}`,
+                  `${t('SPECIALTY')}`,
               ]}
               duration={2500}
               motionProps={{
@@ -109,10 +101,10 @@ const Confiabilidad = () => {
               <WordRotate
                 className="aproil-font font-extrabold text-white uppercase text-center pb-5 sm:pb-8 sm:text-6xl text-[2.6rem]"
                 words={[
-                  "Confiabilidad",
-                  "Expertise",
-                  "Vanguardia",
-                  "Especialidad",
+                    `${t('RELIABILITY')}`,
+                    `${t('EXPERTISE')}`,
+                    `${t('INNOVATION')}`,
+                    `${t('SPECIALTY')}`,
                 ]}
                 duration={2500}
                 motionProps={{
@@ -161,11 +153,7 @@ const Confiabilidad = () => {
                         mx-7 pt-7
                         "
             >
-              Nuestros cuatro pilares no son solo palabras; son la base de cada
-              producto y servicio que ofrecemos. Representan nuestro compromiso
-              para asegurar que tu operación funcione sin interrupciones, con la
-              mayor eficiencia y el soporte técnico especializado que mereces.
-              Confía en la calidad que maximiza tu rendimiento.
+                {t('PILLARS')}
             </div>
           </div>
         </div>

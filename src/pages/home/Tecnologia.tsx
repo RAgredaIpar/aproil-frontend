@@ -1,6 +1,8 @@
 import { Carousel, Card } from "@components/aceternity";
+import {useTranslations} from "next-intl";
 
 const Tecnologia = () => {
+    const t = useTranslations('Technology')
     const cards = [
         {
             src: "https://via.placeholder.com/600x400",
@@ -50,7 +52,7 @@ const Tecnologia = () => {
                 sm:text-5xl
                 lg:text-left
                 ">
-                    NUESTRA TECNOLOGÍA
+                    {t('Technology')}
                 </h1>
                 <p className="
                 font-['Nunito_Sans'] text-gray-900 text-lg

@@ -11,6 +11,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import LocaleSwitcher from "@components/LocaleSwitcher/LocaleSwitcher";
 
 function NavItem({ href, icon, label }: { href: string; icon: any; label: string }) {
     const pathname = usePathname();
@@ -30,8 +32,9 @@ function NavItem({ href, icon, label }: { href: string; icon: any; label: string
 }
 
 export default function Header() {
+    const t = useTranslations('Header')
     return (
-        <header className="w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <header className="relative z-1 w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="mx-auto max-w-7xl px-4 flex items-center justify-center">
                 <Link
                     href="/"
@@ -49,16 +52,16 @@ export default function Header() {
                 <nav className="hidden lg:flex items-center justify-center flex-1 ms-10 text-sm">
                     <ul className="flex items-center gap-8 xl:gap-10 2xl:gap-12">
                         <li>
-                            <NavItem href="/" icon={iconInicio} label="Inicio" />
+                            <NavItem href="/" icon={iconInicio} label={t('Home')}/>
                         </li>
                         <li>
-                            <NavItem href="/productos" icon={iconProductos} label="Productos" />
+                            <NavItem href="/productos" icon={iconProductos} label={t('Products')}/>
                         </li>
                         <li>
-                            <NavItem href="/industrias" icon={iconIndustrias} label="Industrias" />
+                            <NavItem href="/industrias" icon={iconIndustrias} label={t('Industries')}/>
                         </li>
                         <li>
-                            <NavItem href="/contacto" icon={iconContacto} label="Contacto" />
+                            <NavItem href="/contacto" icon={iconContacto} label={t('Contact')} />
                         </li>
                         <li></li>
                         <li></li>
@@ -69,11 +72,17 @@ export default function Header() {
                                 aria-label="Buscar"
                             >
                                 <Image src={iconBuscar} alt="Inicio" className="w-8 h-8" />
-                                <span>Buscar</span>
+                                <span>{t('Search')}</span>
                             </button>
                         </li>
                     </ul>
                 </nav>
+                <div className="hidden 2xl:hidden lg:flex ">
+                    <LocaleSwitcher />
+                </div>
+            </div>
+            <div className="hidden 2xl:flex absolute right-6 top-1/2 -translate-y-1/2">
+                <LocaleSwitcher />
             </div>
         </header>
     );

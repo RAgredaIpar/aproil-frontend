@@ -219,7 +219,7 @@ export const Card = ({
                                     {card.title}
                                 </motion.p>
                             </div>
-                            <div className="py-10">{card.content}</div>
+                            <div className="py-10 dark:text-white">{card.content}</div>
                         </motion.div>
                     </div>
                 )}

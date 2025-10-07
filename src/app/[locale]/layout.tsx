@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "@pages/layout/Header"
 import Footer from "@pages/layout/Footer"
 import {Nunito_Sans, Work_Sans} from "next/font/google";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 
 const Nunito = Nunito_Sans({
     subsets: ['latin'], weight: '400'
@@ -10,11 +11,11 @@ const Work = Work_Sans({
     subsets: ['latin'], weight: '900'
 })
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+type Props = {
+    children: React.ReactNode;
+};
+
+export default async function RootLayout({children}: Props) {
   return (
     <html lang="es" className={`${Nunito.className} ${Work.className}`}>
     <head>
@@ -26,9 +27,11 @@ export default function RootLayout({
     </head>
     <body>
     <div className="flex min-h-dvh flex-col">
-        <Header/>
-        {children}
-        <Footer/>
+        <NextIntlClientProvider>
+            <Header/>
+            {children}
+            <Footer/>
+        </NextIntlClientProvider>
     </div>
     </body>
     </html>
