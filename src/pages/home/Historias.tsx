@@ -1,8 +1,10 @@
 import {LubricacionIndustrial} from "@assets/home-page"
 import {InfiniteMovingCards} from "@components/aceternity";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Historias = () => {
+    const t = useTranslations('Stories')
     return (
         <section className="container mx-auto flex flex-col items-center pt-10">
             <div className="flex w-full flex-col md:flex-row items-center gap-6 lg:w-auto lg:flex-row">
@@ -10,7 +12,7 @@ const Historias = () => {
                     className="w-full max-w-[400px] lg:max-w-[500px] object-contain"/>
                 <div className="flex flex-col items-center text-center">
                     <span className="px-0 text-[20pt] font-medium text-[#848C99] sm:px-5 sm:text-[25pt] lg:px-20 xl:px-15 2xl:px-10 2xl:text-[30pt]">
-                        Conoce las historias
+                        {t('Text1')}
                     </span>
                     <span
                         className="
@@ -23,10 +25,10 @@ const Historias = () => {
                         lg:[clip-path:polygon(20px_0,100%_0,calc(100%-20px)_100%,0_100%)]
                         xl:[clip-path:polygon(22px_0,100%_0,calc(100%-22px)_100%,0_100%)]
                         2xl:[clip-path:polygon(24px_0,100%_0,calc(100%-24px)_100%,0_100%)]">
-                        ¿Quieres saber por
+                        {t('Question1')}
                     </span>
                     <span className="text-[25pt] font-extrabold text-[#e30613] sm:text-[25pt] lg:text-[30pt] xl:text-[35pt] 2xl:text-[45pt]">
-                        qué nos eligen?
+                        {t('Question2')}
                     </span>
                 </div>
             </div>

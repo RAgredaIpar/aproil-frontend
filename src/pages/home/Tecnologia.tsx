@@ -48,15 +48,15 @@ const Tecnologia = () => {
             xl:px-30
             2xl:px-35">
                 <h1 className="
-                font-['Work_Sans'] text-[#E30613] text-3xl mb-10 text-center
+                aproil-font text-[#E30613] text-3xl mb-10 text-center
                 sm:text-5xl
                 lg:text-left
                 ">
                     {t('Technology')}
                 </h1>
                 <p className="
-                font-['Nunito_Sans'] text-gray-900 text-lg
-                text-center
+                text-gray-900 text-lg
+                text-center px-5
                 lg:text-left">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
                     volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.

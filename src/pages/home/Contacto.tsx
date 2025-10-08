@@ -3,7 +3,6 @@ import { PointerHighlight } from "@components/aceternity";
 import { InteractiveHoverButton } from "@components/magic-ui";
 import Image from "next/image";
 
-
 const Contacto = () => {
     return (
         <section className="w-full flex relative">

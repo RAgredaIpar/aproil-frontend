@@ -2,8 +2,10 @@
 import { cn } from "@lib/utils";
 import { motion } from "motion/react";
 import React from "react";
+import {useTranslations} from "next-intl";
 
 export function Lamp() {
+    const t = useTranslations('ServicesLamp')
     return (
         <LampContainer>
             <motion.h1
@@ -17,8 +19,8 @@ export function Lamp() {
                 className="pb-10 bg-gradient-to-br from-slate-400 to-black bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
             >
 
-                <p className="uppercase text-3xl sm:text-4xl">conoce nuestros</p>
-                <p className="uppercase aproil-font text-6xl sm:text-8xl">servicios</p>
+                <p className="uppercase text-[26px] sm:text-4xl">{t('Header1')}</p>
+                <p className="uppercase aproil-font text-[55px] sm:text-8xl px-4">{t('Header2')}</p>
             </motion.h1>
         </LampContainer>
     );
