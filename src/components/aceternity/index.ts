@@ -1,4 +1,3 @@
-export * from "./AnimatedTestimonials/animated-testimonials";
 export * from "./Loader/loader";
 export * from "./Lamp/lamp";
 export * from "./WobbleCard/wobble-card";

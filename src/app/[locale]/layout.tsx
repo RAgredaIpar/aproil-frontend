@@ -2,7 +2,7 @@ import "./globals.css";
 import Header from "@pages/layout/Header"
 import Footer from "@pages/layout/Footer"
 import {Nunito_Sans, Work_Sans} from "next/font/google";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 
 const Nunito = Nunito_Sans({
     subsets: ['latin'], weight: '400'

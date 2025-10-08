@@ -1,5 +1,5 @@
 "use client";
-
+import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@components/aceternity/AppleCardsCarousel/use-outside-click";
 import { cn } from "@lib/utils";
 import {
@@ -16,8 +16,6 @@ import React, {
     useContext,
     type JSX,
 } from "react";
-
-import type { ImgHTMLAttributes } from "react";
 
 /* ----------------- Types ----------------- */
 type CarouselProps = {
@@ -157,6 +155,11 @@ export const Card = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const { onCardClose } = useContext(CarouselContext);
 
+    const handleClose = React.useCallback(() => {
+        setOpen(false);
+        onCardClose(index);
+    }, [onCardClose, index]);
+
     useEffect(() => {
         function onKeyDown(event: KeyboardEvent) {
             if (event.key === "Escape") handleClose();
@@ -166,15 +169,12 @@ export const Card = ({
 
         window.addEventListener("keydown", onKeyDown);
         return () => window.removeEventListener("keydown", onKeyDown);
-    }, [open]);
+    }, [open, handleClose]);
+
 
     useOutsideClick(containerRef, () => handleClose());
 
     const handleOpen = () => setOpen(true);
-    const handleClose = () => {
-        setOpen(false);
-        onCardClose(index);
-    };
 
     return (
         <>
@@ -264,7 +264,9 @@ export const Card = ({
 };
 
 /* ----------------- BlurImage ----------------- */
-type BlurImageProps = { fill?: boolean } & ImgHTMLAttributes<HTMLImageElement>;
+type BlurImageProps = {
+    fill?: boolean;
+} & Omit<ImageProps, "placeholder">; // omitimos placeholder si quieres personalizar
 
 export const BlurImage = ({
                               height,
@@ -278,21 +280,24 @@ export const BlurImage = ({
     const [isLoading, setLoading] = useState(true);
 
     return (
-        <img
+        <div
             className={cn(
-                "transition duration-300",
-                isLoading ? "blur-sm" : "blur-0",
-                fill ? "absolute inset-0 h-full w-full object-cover" : "",
+                fill ? "absolute inset-0 h-full w-full" : "relative",
                 className
             )}
-            onLoad={() => setLoading(false)}
-            src={src as string}
-            width={width}
-            height={height}
-            loading="lazy"
-            decoding="async"
-            alt={alt ? alt : "Background of a beautiful view"}
-            {...rest}
-        />
+        >
+            <Image
+                src={src}
+                alt={alt ?? "Background of a beautiful view"}
+                fill={fill}
+                width={width}
+                height={height}
+                loading="lazy"
+                decoding="async"
+                className={cn("transition duration-300", isLoading ? "blur-sm" : "blur-0")}
+                onLoad={() => setLoading(false)}
+                {...rest}
+            />
+        </div>
     );
 };

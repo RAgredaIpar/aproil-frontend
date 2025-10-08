@@ -5,7 +5,7 @@ const Tecnologia = () => {
     const t = useTranslations('Technology')
     const cards = [
         {
-            src: "https://via.placeholder.com/600x400",
+            src: "/placeholder.svg",
             title: "Tecnología Avanzada",
             category: "Innovación",
             content: (
@@ -16,7 +16,7 @@ const Tecnologia = () => {
             ),
         },
         {
-            src: "https://via.placeholder.com/600x400",
+            src: "/placeholder.svg",
             title: "Escalabilidad",
             category: "Infraestructura",
             content: (
@@ -27,7 +27,7 @@ const Tecnologia = () => {
             ),
         },
         {
-            src: "https://via.placeholder.com/600x400",
+            src: "/placeholder.svg",
             title: "Integración",
             category: "Software",
             content: (

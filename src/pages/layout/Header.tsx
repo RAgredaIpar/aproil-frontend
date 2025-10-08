@@ -9,12 +9,20 @@ import {
     iconBuscar,
 } from "@assets/header";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import LocaleSwitcher from "@components/LocaleSwitcher/LocaleSwitcher";
+import Image, { StaticImageData } from "next/image";
 
-function NavItem({ href, icon, label }: { href: string; icon: any; label: string }) {
+function NavItem({
+                     href,
+                     icon,
+                     label,
+                 }: {
+    href: string;
+    icon: StaticImageData | string;
+    label: string;
+}) {
     const pathname = usePathname();
     const isActive = pathname === href;
 

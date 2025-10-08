@@ -27,8 +27,10 @@ export function PointerHighlight({
     const EXTRA_X = isMobile ? 4 : 10;
     const EXTRA_Y = isMobile ? 4 : 10;
     useEffect(() => {
-        if (containerRef.current) {
-            const { width, height } = containerRef.current.getBoundingClientRect();
+        const el = containerRef.current;
+
+        if (el) {
+            const { width, height } = el.getBoundingClientRect();
             setDimensions({ width, height });
         }
 
@@ -39,13 +41,13 @@ export function PointerHighlight({
             }
         });
 
-        if (containerRef.current) {
-            resizeObserver.observe(containerRef.current);
+        if (el) {
+            resizeObserver.observe(el);
         }
 
         return () => {
-            if (containerRef.current) {
-                resizeObserver.unobserve(containerRef.current);
+            if (el) {
+                resizeObserver.unobserve(el);
             }
         };
     }, []);
