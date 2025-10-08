@@ -22,7 +22,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     const messages: Record<string, Record<string, string>> = {};
 
     for (const mod of modules) {
-        messages[mod] = (await import(`../../messages/${locale}/${mod}.json`)).default;
+        messages[mod] = (await import(`/messages/${locale}/${mod}.json`)).default;
     }
 
     return {

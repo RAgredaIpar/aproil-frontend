@@ -1,10 +1,10 @@
-import Inicio from "@pages/home/Inicio"
-import Confiabilidad from "@pages/home/Confiabilidad"
-import Tecnologia from "@pages/home/Tecnologia"
-import Servicios from "@pages/home/Servicios"
-import Distribuidor from "@pages/home/Distribuidor"
-import Historias from "@pages/home/Historias"
-import Contacto from "@pages/home/Contacto";
+import Inicio from "@pages/Inicio"
+import Confiabilidad from "@pages/Confiabilidad"
+import Tecnologia from "@pages/Tecnologia"
+import Servicios from "@pages/Servicios"
+import Distribuidor from "@pages/Distribuidor"
+import Historias from "@pages/Historias"
+import Contacto from "@pages/Contacto";
 
 import './globals.css';
 export default function Home() {
