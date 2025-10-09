@@ -3,6 +3,7 @@ import Header from "@pages/Header"
 import Footer from "@pages/Footer"
 import {Nunito_Sans, Work_Sans} from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
+import React from "react";
 
 const Nunito = Nunito_Sans({
     subsets: ['latin'], weight: '400'

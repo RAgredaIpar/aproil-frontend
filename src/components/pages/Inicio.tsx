@@ -26,7 +26,7 @@ const Inicio = () => {
                             className="rounded-xl inline-block w-full 2xl:mb-5"
                         >
                             <video
-                                src="video-corporativo-aproil.mp4"
+                                src="/video-corporativo-aproil.mp4"
                                 autoPlay
                                 loop
                                 muted

@@ -10,6 +10,7 @@ import {
 } from "@assets/header";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import { useTranslations } from "next-intl";
 import LocaleSwitcher from "@components/LocaleSwitcher/LocaleSwitcher";
 import Image, { StaticImageData } from "next/image";
@@ -24,11 +25,14 @@ function NavItem({
     label: string;
 }) {
     const pathname = usePathname();
-    const isActive = pathname === href;
+    const locale = useLocale();
+    const normalized = pathname === `/${locale}` ? "/" : pathname.replace(`/${locale}`, "");
+    const isActive = normalized === href || normalized.startsWith(`${href}/`);
 
     return (
         <Link
             href={href}
+            aria-current={isActive ? "page" : undefined}
             className={`flex flex-col items-center gap-2 ${
                 isActive ? "font-semibold text-gray-900" : "text-gray-600 hover:text-gray-900"
             }`}
@@ -42,7 +46,7 @@ function NavItem({
 export default function Header() {
     const t = useTranslations('Header')
     return (
-        <header className="relative z-1 w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <header className="relative z-[1] w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="mx-auto max-w-7xl px-4 flex items-center justify-center">
                 <Link
                     href="/"
@@ -63,13 +67,13 @@ export default function Header() {
                             <NavItem href="/" icon={iconInicio} label={t('Home')}/>
                         </li>
                         <li>
-                            <NavItem href="/productos" icon={iconProductos} label={t('Products')}/>
+                            <NavItem href="/products" icon={iconProductos} label={t('Products')}/>
                         </li>
                         <li>
-                            <NavItem href="/industrias" icon={iconIndustrias} label={t('Industries')}/>
+                            <NavItem href="/industries" icon={iconIndustrias} label={t('Industries')}/>
                         </li>
                         <li>
-                            <NavItem href="/contacto" icon={iconContacto} label={t('Contact')} />
+                            <NavItem href="/contact" icon={iconContacto} label={t('Contact')} />
                         </li>
                         <li></li>
                         <li></li>
