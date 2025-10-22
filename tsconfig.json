@@ -31,7 +31,7 @@
       "@testing/*": ["src/testing/*"],
       "@types/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
-      "@pages/*": ["src/components/pages/*"]
+      "@pages/*": ["src/components/pages/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
