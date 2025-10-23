@@ -1,0 +1,1 @@
+export {default as cubetaAproil} from "./cubeta-tambo-aproil.webp"

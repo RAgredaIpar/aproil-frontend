@@ -1,0 +1,1 @@
+export { default as banner} from "./BANNER_CONTACTO.webp"

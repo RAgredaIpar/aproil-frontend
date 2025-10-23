@@ -1,5 +1,7 @@
 import { BoxReveal } from "@components/magic-ui/BoxReveal/box-reveal";
 import { useTranslations } from "next-intl";
+import { banner } from "@assets/contact";
+import Image from "next/image";
 
 const Contact = () => {
     const t = useTranslations('');
@@ -8,7 +10,7 @@ const Contact = () => {
         <section className="w-full max-w-screen mx-auto px-4">
             <BoxReveal>
                 <div className="flex flex-col text-center lg:text-left ">
-                    <div className="aproil-font text-4xl xl:text-5xl 2xl:text-6xl italic">
+                    <div className="aproil-font text-3xl xl:text-5xl 2xl:text-6xl italic">
                         <h1 className="text-[#e30613]">
                             SIEMPRE LISTOS
                         </h1>

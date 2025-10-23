@@ -1,5 +1,10 @@
 import { getApplicationsList, getTechnologiesList } from "@lib/content/client";
 import type { ApplicationCard, TechnologyCard } from "../../../types/domain";
+import Tech from "@pages/product-pages/Tecnologia";
+import ContactoProductos from "@pages/product-pages/ContactoProductos";
+import {TextAnimate} from "@components/magic-ui/MagicText/magix-text";
+import {useTranslations} from "next-intl";
+import Image from "next/image";
 
 type PageProps = { params: { locale: "es" | "en" } };
 
@@ -27,16 +32,10 @@ export default async function ProductsHubPage({ params }: PageProps) {
     const techs = techsData.items as TechnologyCard[];
 
     return (
-        <main className="max-w-6xl mx-auto p-6">
-            <h1 className="text-3xl font-semibold">Catálogo</h1>
-            <p className="text-sm text-gray-500 mt-1">
-                {techs.length} tecnologías · {apps.length} aplicaciones
-            </p>
-
-            {/* Sección: Tecnologías */}
-            <section className="mt-12">
-                <h2 className="text-2xl font-semibold">Tecnologías</h2>
-                <ul className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <main className="bg-[#F9F9F9]">
+            <Tech/>
+            <section className="container mx-auto mt-12">
+                <ul className=" mt-4 grid sm:grid-cols-2 xl:grid-cols-4 justify-items-center-safe">
                     {techs.map((t) => {
                         const name = pick(t.name, locale, "");
                         const imgSrc = resolveAsset(t.image?.url ?? t.icon?.url);
@@ -46,30 +45,26 @@ export default async function ProductsHubPage({ params }: PageProps) {
                             name ??
                             t.slug;
                         return (
-                            <li key={t.slug} className="border rounded-xl overflow-hidden">
+                            <li key={t.slug}
+                                className="border overflow-hidden rounded-tl-4xl rounded-br-4xl max-w-max h-auto my-5">
                                 <a href={`/${locale}/technologies/${t.slug}`} className="block">
                                     {imgSrc && (
-                                        <img
+                                        <Image
                                             src={imgSrc}
                                             alt={alt}
-                                            className="h-40 w-full object-cover"
+                                            width={300}
+                                            height={800}
                                         />
                                     )}
-                                    <div className="p-4">
-                                        <div className="font-medium">{name}</div>
-                                        <div className="text-xs text-gray-500">{t.slug}</div>
-                                    </div>
                                 </a>
                             </li>
                         );
                     })}
                 </ul>
             </section>
-
-            {/* Sección: Aplicaciones */}
-            <section className="mt-8">
+            <section className="container mx-auto mt-12">
                 <h2 className="text-2xl font-semibold">Aplicaciones</h2>
-                <ul className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <ul className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {apps.map((a) => {
                         const name = pick(a.name, locale, "");
                         const imgSrc = resolveAsset(a.image?.url ?? a.icon?.url);
@@ -79,13 +74,16 @@ export default async function ProductsHubPage({ params }: PageProps) {
                             name ??
                             a.slug;
                         return (
-                            <li key={a.slug} className="border rounded-xl overflow-hidden">
+                            <li key={a.slug}
+                                className="border overflow-hidden rounded-tl-4xl rounded-br-4xl flex">
                                 <a href={`/${locale}/applications/${a.slug}`} className="block">
                                     {imgSrc && (
-                                        <img
+                                        <Image
                                             src={imgSrc}
                                             alt={alt}
-                                            className="h-40 w-full object-cover"
+                                            width="1000"
+                                            height="300"
+                                            className="object-cover"
                                         />
                                     )}
                                     <div className="p-4">
@@ -98,6 +96,7 @@ export default async function ProductsHubPage({ params }: PageProps) {
                     })}
                 </ul>
             </section>
+            <ContactoProductos/>
         </main>
     );
 }
