@@ -1,11 +1,15 @@
 import { notFound } from "next/navigation";
 import { getIndustryPage } from "@lib/content/client";
 
-type PageProps = {
-    params: { locale: "es" | "en"; slug: string };
-};
+export function generateStaticParams(): Array<{ locale: "es" | "en"; slug: string }> {
+    return [];
+}
+export const dynamicParams = true;
 
-export default async function IndustryDetailPage({ params }: PageProps) {
+type Params = Awaited<ReturnType<typeof generateStaticParams>>[number];
+type Props = { params: Promise<Params> };
+
+export default async function IndustryDetailPage({ params }: Props) {
     const { locale, slug } = await params;
 
     try {
@@ -26,11 +30,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                 {bannerSrc && (
                     <img
                         src={bannerSrc}
-                        alt={
-                            data.banner?.alt?.[locale] ??
-                            data.banner?.alt?.es ??
-                            data.name
-                        }
+                        alt={data.banner?.alt?.[locale] ?? data.banner?.alt?.es ?? data.name}
                         className="mt-4 w-full h-56 object-cover rounded-xl"
                     />
                 )}
@@ -68,7 +68,10 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                                     </div>
                                 ) : null}
                                 <div className="text-sm mt-1">
-                                    PDF: <a className="underline" href={p.pdfUrl} target="_blank" rel="noreferrer">{p.pdfUrl}</a>
+                                    PDF:{" "}
+                                    <a className="underline" href={p.pdfUrl} target="_blank" rel="noreferrer">
+                                        {p.pdfUrl}
+                                    </a>
                                 </div>
                             </li>
                         ))}

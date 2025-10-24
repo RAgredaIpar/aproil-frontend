@@ -1,17 +1,20 @@
 import { notFound } from "next/navigation";
 import { getTechnologyPage } from "@lib/content/client";
 
-type PageProps = {
-    params: { locale: "es" | "en"; slug: string };
-};
+export function generateStaticParams(): Array<{ locale: "es" | "en"; slug: string }> {
+    return [];
+}
+export const dynamicParams = true;
 
-export default async function TechnologyDetailPage({ params }: PageProps) {
+type Params = Awaited<ReturnType<typeof generateStaticParams>>[number];
+type Props = { params: Promise<Params> };
+
+export default async function TechnologyDetailPage({ params }: Props) {
     const { locale, slug } = await params;
 
     try {
         const data = await getTechnologyPage(slug, locale);
 
-        // si los assets en JSON son rutas relativas (p.ej. /banners/..), prefíjalas con ASSETS_BASE
         const assetsBase = process.env.NEXT_PUBLIC_ASSETS_BASE ?? "";
         const bannerSrc =
             data.banner?.url &&
@@ -27,16 +30,11 @@ export default async function TechnologyDetailPage({ params }: PageProps) {
                 {bannerSrc && (
                     <img
                         src={bannerSrc}
-                        alt={
-                            data.banner?.alt?.[locale] ??
-                            data.banner?.alt?.es ??
-                            data.name
-                        }
+                        alt={data.banner?.alt?.[locale] ?? data.banner?.alt?.es ?? data.name}
                         className="mt-4 w-full h-56 object-cover rounded-xl"
                     />
                 )}
 
-                {/* solo para verificar rápidamente que llega el contenido */}
                 {data.contentMd && (
                     <pre className="mt-6 whitespace-pre-wrap text-gray-800">
             {data.contentMd}
@@ -54,7 +52,6 @@ export default async function TechnologyDetailPage({ params }: PageProps) {
                                 {grp.applicationName} — {grp.products.length} productos
                             </div>
 
-                            {/* Muestra solo los 3 primeros para validar rápido */}
                             <ul className="mt-2 text-sm text-gray-600 list-disc pl-5">
                                 {grp.products.slice(0, 3).map((p) => (
                                     <li key={p.slug}>
