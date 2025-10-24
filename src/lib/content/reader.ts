@@ -21,9 +21,9 @@ export function pickLocalized<T>(pair: Localized<T>, locale: Locale): T {
 }
 
 // Para estructuras locales dentro de Product (name/shortDescription)
-export function pickProductLocale<T extends { es: any; en?: any }>(
-    obj: T,
+export function pickProductLocale<T>(
+    obj: { es: T } & Partial<Record<Locale, T>>,
     locale: Locale
-) {
-    return (obj?.[locale] ?? obj?.es) as T["es"];
+): T {
+    return (obj?.[locale] ?? obj.es)!;
 }
