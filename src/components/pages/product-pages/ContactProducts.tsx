@@ -2,10 +2,12 @@ import { cubetaAproil } from "@assets/product";
 import { PointerHighlight } from "@components/aceternity";
 import { InteractiveHoverButton } from "@components/magic-ui";
 import Image from "next/image";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
+import Link from "next/link";
 
-const Contacto = () => {
+const ContactProducts = () => {
     const t = useTranslations('Contact')
+    const locale = useLocale()
     return (
         <section className="container w-full mx-auto flex relative">
             <div className="w-full sm:w-1/2
@@ -35,10 +37,9 @@ const Contacto = () => {
                     />
                 </div>
                 <div className="text-gray-500 md:pb-20 sm:pb-10 max-w-3xl sm:text-left text-center sm:px-0 px-2
-                2xl:text-[24px] 2xl:pt-10
-                xl:text-[24px] xl:pt-15
-                lg:text-[24px]
-                md:text-[24px] md:pt-20
+                2xl:pt-10
+                xl:pt-15
+                md:pt-20
                 sm:text-[24px] sm:pt-10">
                     {t('TEXT')}
                 </div>
@@ -46,7 +47,9 @@ const Contacto = () => {
                 xl:text-2xl xl:pt-10
                 lg:text-2xl lg:pt-20
                 sm:text-2xl sm:pt-10">
-                    <InteractiveHoverButton>{t('BUTTON')}</InteractiveHoverButton>
+                    <Link href={`/${locale}/contact`}>
+                        <InteractiveHoverButton>{t('BUTTON')}</InteractiveHoverButton>
+                    </Link>
                 </div>
             </div>
             <div className="hidden sm:flex xl:max-w-150 2xl:max-w-180 overflow-hidden xl:pt-10 w-full xl:pl-20">
@@ -61,4 +64,4 @@ const Contacto = () => {
     );
 };
 
-export default Contacto;
+export default ContactProducts;

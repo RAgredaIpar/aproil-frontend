@@ -1,6 +1,6 @@
 "use client"
 
-import { ElementType, memo } from "react"
+import React, { ElementType, memo } from "react"
 import { AnimatePresence, motion, MotionProps, Variants } from "motion/react"
 
 import { cn } from "@lib/utils"
@@ -157,7 +157,7 @@ const TextAnimateBase = ({
                          }: TextAnimateProps) => {
     const MotionComponent = motion.create(Component)
 
-    let segments: string[] = []
+    let segments: string[]
     if (typeof children === "string") {
         switch (by) {
             case "word":

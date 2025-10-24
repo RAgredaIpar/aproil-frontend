@@ -1,11 +1,6 @@
 import { BoxReveal } from "@components/magic-ui/BoxReveal/box-reveal";
-import { useTranslations } from "next-intl";
-import { banner } from "@assets/contact";
-import Image from "next/image";
 
 const Contact = () => {
-    const t = useTranslations('');
-
     return (
         <section className="w-full max-w-screen mx-auto px-4">
             <BoxReveal>

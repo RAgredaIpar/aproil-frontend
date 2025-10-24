@@ -11,6 +11,7 @@ export type TechnologyCard = {
     slug: string;
     name: Localized<string>;
     image?: ImageRef;
+    banner?: ImageRef;
     icon?: ImageRef;
 };
 
