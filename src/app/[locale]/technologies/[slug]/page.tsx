@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { getTechnologyPage } from "@lib/content/client";
 
-export function generateStaticParams(): Array<{ locale: "es" | "en"; slug: string }> {
-    return [];
-}
-export const dynamicParams = true;
+export const revalidate = 600;
 
-type Params = Awaited<ReturnType<typeof generateStaticParams>>[number];
-type Props = { params: Promise<Params> };
+type Props = {
+    params: Promise<{ locale: "es" | "en"; slug: string }>;
+};
 
 export default async function TechnologyDetailPage({ params }: Props) {
     const { locale, slug } = await params;
@@ -51,7 +49,6 @@ export default async function TechnologyDetailPage({ params }: Props) {
                             <div className="font-medium">
                                 {grp.applicationName} — {grp.products.length} productos
                             </div>
-
                             <ul className="mt-2 text-sm text-gray-600 list-disc pl-5">
                                 {grp.products.slice(0, 3).map((p) => (
                                     <li key={p.slug}>

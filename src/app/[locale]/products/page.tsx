@@ -4,13 +4,11 @@ import Tech from "@pages/product-pages/Tecnologia";
 import ContactoProductos from "@pages/product-pages/ContactoProductos";
 import Image from "next/image";
 
-export function generateStaticParams(): Array<{ locale: "es" | "en" }> {
-    return [];
-}
-export const dynamicParams = true;
+export const revalidate = 600;
 
-type Params = Awaited<ReturnType<typeof generateStaticParams>>[number];
-type Props = { params: Promise<Params> };
+type Props = {
+    params: Promise<{ locale: "es" | "en" }>;
+};
 
 function pick<T>(
     obj: { es: T; en?: T } | undefined,

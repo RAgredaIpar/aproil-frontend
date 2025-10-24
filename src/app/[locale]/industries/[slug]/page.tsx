@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { getIndustryPage } from "@lib/content/client";
 
-export function generateStaticParams(): Array<{ locale: "es" | "en"; slug: string }> {
-    return [];
-}
-export const dynamicParams = true;
+export const revalidate = 600;
 
-type Params = Awaited<ReturnType<typeof generateStaticParams>>[number];
-type Props = { params: Promise<Params> };
+type Props = {
+    params: Promise<{ locale: "es" | "en"; slug: string }>;
+};
 
 export default async function IndustryDetailPage({ params }: Props) {
     const { locale, slug } = await params;

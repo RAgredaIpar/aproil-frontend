@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { getApplicationPage } from "@lib/content/client";
 
-export function generateStaticParams(): Array<{ locale: "es" | "en"; slug: string }> {
-    return [];
-}
-export const dynamicParams = true;
+export const revalidate = 600;
 
-type Params = Awaited<ReturnType<typeof generateStaticParams>>[number];
-type Props = { params: Promise<Params> };
+type Props = {
+    params: Promise<{ locale: "es" | "en"; slug: string }>;
+};
 
 export default async function ApplicationDetailPage({ params }: Props) {
     const { locale, slug } = await params;
@@ -28,6 +26,7 @@ export default async function ApplicationDetailPage({ params }: Props) {
                 <p className="text-sm text-gray-500 mt-1">slug: {slug}</p>
 
                 {bannerSrc && (
+                    // (warning de <img> lo puedes migrar más tarde)
                     <img
                         src={bannerSrc}
                         alt={data.banner?.alt?.[locale] ?? data.banner?.alt?.es ?? data.name}
