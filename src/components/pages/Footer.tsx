@@ -48,13 +48,13 @@ export default function Footer() {
                         <h4 className="mb-5 font-semibold">Navegación</h4>
                         <ul className="space-y-0 text-neutral-900 max-w-max">
                             <li>
-                                <Link href="/src/pages/public" className="flex items-center gap-2">
+                                <Link href="/" className="flex items-center gap-2">
                                     <Image src={iconInicio} alt="Inicio" className="h-5 w-5"/>
                                     Inicio
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/productos" className="flex items-center gap-2">
+                                <Link href="/products" className="flex items-center gap-2">
                                     <Image
                                         src={iconProductos}
                                         alt="Productos"
@@ -64,7 +64,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/industrias" className="flex items-center gap-2">
+                                <Link href="/industries" className="flex items-center gap-2">
                                     <Image
                                         src={iconIndustrias}
                                         alt="Industrias"
@@ -74,13 +74,7 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/nosotros" className="flex items-center gap-2">
-                                    <Image src={iconServicios} alt="Nosotros" className="h-5 w-5"/>
-                                    Nosotros
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contacto" className="flex items-center gap-2">
+                                <Link href="/contact" className="flex items-center gap-2">
                                     <Image src={iconContacto} alt="Contacto" className="h-5 w-5"/>
                                     Contacto
                                 </Link>
