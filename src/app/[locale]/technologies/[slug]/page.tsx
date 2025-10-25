@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTechnologyPage } from "@lib/content/client";
+import CategoriesSidebar from "@pages/sidebar/CategoriesSidebar";
 
 export const revalidate = 600;
 
@@ -21,44 +22,54 @@ export default async function TechnologyDetailPage({ params }: Props) {
                 : `${assetsBase}${data.banner.url}`);
 
         return (
-            <main className="max-w-5xl mx-auto p-6">
-                <h1 className="text-3xl font-semibold">{data.name}</h1>
-                <p className="text-sm text-gray-500 mt-1">slug: {slug}</p>
-
+            <main>
                 {bannerSrc && (
                     <img
                         src={bannerSrc}
                         alt={data.banner?.alt?.[locale] ?? data.banner?.alt?.es ?? data.name}
-                        className="mt-4 w-full h-56 object-cover rounded-xl"
+                        className="w-full object-cover"
                     />
                 )}
+                <div className="grid grid-cols-[18rem_minmax(0,1fr)] gap-6 py-6">
+                    <CategoriesSidebar
+                        locale={locale}
+                        className="sticky top-4 min-h-[calc(100vh-1rem)]"
+                    />
 
-                {data.contentMd && (
-                    <pre className="mt-6 whitespace-pre-wrap text-gray-800">
-            {data.contentMd}
-          </pre>
-                )}
+                    <article className="min-w-0 mx-auto">
+                        <div className="mx-auto max-w-7xl px-4">
+                            <h1 className="text-3xl font-semibold">{data.name}</h1>
+                            <p className="text-sm text-gray-500 mt-1">slug: {slug}</p>
 
-                <h2 className="mt-8 text-xl font-semibold">
-                    Applications ({data.applications.length})
-                </h2>
+                            {data.contentMd && (
+                                <pre className="mt-6 whitespace-pre-wrap text-gray-800">
+                            {data.contentMd}
+                        </pre>
+                            )}
 
-                <ul className="mt-3 space-y-2">
-                    {data.applications.map((grp) => (
-                        <li key={grp.applicationSlug} className="border rounded-lg p-4">
-                            <div className="font-medium">
-                                {grp.applicationName} — {grp.products.length} productos
-                            </div>
-                            <ul className="mt-2 text-sm text-gray-600 list-disc pl-5">
-                                {grp.products.slice(0, 3).map((p) => (
-                                    <li key={p.slug}>
-                                        {p.name} ({p.slug})
+                            <h2 className="mt-8 text-xl font-semibold">
+                                Applications ({data.applications.length})
+                            </h2>
+
+                            <ul className="mt-3 space-y-2">
+                                {data.applications.map((grp) => (
+                                    <li key={grp.applicationSlug} className="border rounded-lg p-4">
+                                        <div className="font-medium">
+                                            {grp.applicationName} — {grp.products.length} productos
+                                        </div>
+                                        <ul className="mt-2 text-sm text-gray-600 list-disc pl-5">
+                                            {grp.products.slice(0, 3).map((p) => (
+                                                <li key={p.slug}>
+                                                    {p.name} ({p.slug})
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </li>
                                 ))}
                             </ul>
-                        </li>
-                    ))}
-                </ul>
+                        </div>
+                    </article>
+                </div>
             </main>
         );
     } catch {
