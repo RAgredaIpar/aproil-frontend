@@ -1,0 +1,21 @@
+{
+  "form": {
+    "contact": "Contact",
+    "name": "Full name",
+    "phone": "Phone",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "send": "Send"
+  },
+  "card": {
+    "service": "Client Service:",
+    "email": "Email:",
+    "location": "Our Location:",
+    "social": "Social Network:"
+  },
+  "info": {
+    "title": "<red>ALWAYS READY</red> TO ADVICE YOU",
+    "description": "At Aproil Lubricants, we understand the challenges of your industry. We help you identify the best lubrication solution with high-performance products and specialized support, so you can achieve your goals safely and confidently. <br></br><br></br>Contact us and we will gladly assist you."
+  }
+}

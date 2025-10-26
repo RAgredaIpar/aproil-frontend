@@ -2,7 +2,7 @@ import { Carousel, Card } from "@components/aceternity";
 import {useTranslations} from "next-intl";
 
 const Tecnologia = () => {
-    const t = useTranslations('Technology')
+    const t = useTranslations('HomePage')
     const cards = [
         {
             src: "/placeholder.svg",
@@ -52,7 +52,7 @@ const Tecnologia = () => {
                 sm:text-5xl
                 lg:text-left
                 ">
-                    {t('Technology')}
+                    {t('technology.title')}
                 </h1>
                 <p className="
                 text-gray-900 text-lg

@@ -5,7 +5,7 @@ import Image from "next/image";
 import {useTranslations} from "next-intl";
 
 const Contacto = () => {
-    const t = useTranslations('Contact')
+    const t = useTranslations('HomePage')
     return (
         <section className="container w-full mx-auto flex relative">
             <div className="w-full sm:w-1/2
@@ -17,14 +17,14 @@ const Contacto = () => {
             py-10">
                 <div className="relative overflow-visible whitespace-nowrap z-10">
                     <div className="uppercase xl:text-6xl lg:text-5xl md:text-5xl sm:text-4xl text-[20px] sm:text-left text-center font-extrabold">
-                        {t('DISCOVER')}{" "}
+                        {t('contact.discover')}{" "}
                         <PointerHighlight
                             rectangleClassName="uppercase border-2 dark:border-[#E30613] dark:border-[#E30613]">
-                            <span>{t('POINTER')}</span>
+                            <span>{t('contact.pointer')}</span>
                         </PointerHighlight>
                     </div>
                     <div className="uppercase xl:text-[60px] lg:text-[50px] md:text-[60px] sm:text-[50px] text-[25px] sm:text-left text-center text-[#E30613] font-extrabold aproil-font">
-                        {t('LUBRICATION')}
+                        {t('contact.lubrication')}
                     </div>
                 </div>
                 <div className="flex sm:hidden justify-center items-center w-full">
@@ -40,13 +40,13 @@ const Contacto = () => {
                 lg:text-[24px]
                 md:text-[24px] md:pt-20
                 sm:text-[24px] sm:pt-10">
-                    {t('TEXT')}
+                    {t('contact.text')}
                 </div>
                 <div className="aproil-font 2xl:text-3xl relative overflow-visible whitespace-nowrap z-10 sm:text-left text-center pt-10
                 xl:text-2xl xl:pt-10
                 lg:text-2xl lg:pt-20
                 sm:text-2xl sm:pt-10">
-                    <InteractiveHoverButton>{t('BUTTON')}</InteractiveHoverButton>
+                    <InteractiveHoverButton>{t('contact.button')}</InteractiveHoverButton>
                 </div>
             </div>
             <div className="hidden sm:flex xl:max-w-150 2xl:max-w-180 overflow-hidden xl:pt-10 w-full xl:pl-20">

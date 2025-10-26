@@ -7,7 +7,7 @@ import {useLocale, useTranslations} from "next-intl";
 import {catalogMockup, tamborLine} from "@assets/product";
 
 export default function Tech(){
-    const t = useTranslations('ProductTech')
+    const t = useTranslations('ProductPage')
     const local = useLocale()
     return (
         <section className="max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl mx-auto my-16 relative">
@@ -18,7 +18,7 @@ export default function Tech(){
                     sm:text-[30px]
                     xl:text-4xl
                     2xl:text-5xl">
-                        {t.rich("title", {
+                        {t.rich("card.title", {
                             red: (chunks) => <span className="text-[#E30613]">{chunks}</span>,
                         })}
                     </div>
@@ -28,7 +28,7 @@ export default function Tech(){
                     xl:pr-3 xl:mt-10 xl:pl-15
                     2xl:pr-30 2xl:mt-10 2xl:pl-20 2xl:text-[16px]">
                         <p className="text-gray-600">
-                            {t('description')}
+                            {t('card.description')}
                         </p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ export default function Tech(){
                 lg:place-items-end lg:max-w-2/3 lg:mr-10 lg:pr-12 lg:mx-0 lg:rounded-3xl
                  ">
                     <p className="pt-6 text-sm sm:text-xl">
-                        {t.rich("cta", {
+                        {t.rich("card.cta", {
                             br: () => <br />
                         })}
                     </p>
@@ -92,21 +92,26 @@ export default function Tech(){
                             hoverColor="#E30613"
                             hoverTextColor="#FFFFFF"
                             className="content-center py-1 rounded-xl lg:py-0 lg:px-2 2xl:px-5 lg:rounded-4xl border border-[#E30613]">
-                            {t("catalog")}
+                            {t("card.catalog")}
                         </InteractiveHoverButton>
                     </Link>
                 </div>
             </div>
+            <div className="block lg:hidden mx-5 sm:mx-auto text-center my-20 border-t-8 border-b-8 p-3">
+                <h1 className="aproil-font text-5xl font-extrabold">
+                    {t('card.products')}
+                </h1>
+            </div>
             <div className="max-w-screen my-20">
                 <TextAnimate animation="slideUp" by="word" className="text-center text-2xl">
-                    {t.rich("techText", {
+                    {t.rich("card.techText", {
                         br: () => <br className="hidden lg:block" />,
                     })}
                 </TextAnimate>
             </div>
             <div className="max-w-screen justify-items-center-safe">
                 <p className="rounded-4xl text-xl shadow-[0_0_25px_rgba(0,0,0,0.2)] px-10 py-2 text-[#E30613]">
-                    {t('tech')}
+                    {t('card.tech')}
                 </p>
             </div>
         </section>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 const Servicios = () => {
-    const t = useTranslations('Services')
+    const t = useTranslations('HomePage')
     return (
         <section className="w-full ">
             <div className="container mx-auto flex flex-col lg:px-7 px-5 pb-10">
@@ -17,12 +17,12 @@ const Servicios = () => {
                     >
                         <div className="xl:max-w-md lg:max-w-sm md:max-w-md sm:max-w-sm">
                             <h2 className="uppercase aproil-font text-left text-balance text-3xl lg:text-4xl max-w-1 font-semibold text-white">
-                                {t('WobbleCardRedH')}
+                                {t('services.wobbleCardRedH')}
                             </h2>
                             <p className="text-left text-base/6 text-white max-w-[25rem]
                             xl:mt-4 xl:ml-15
                             mt-4 sm:ml-5">
-                                {t('WobbleCardRedP')}
+                                {t('services.wobbleCardRedP')}
                             </p>
                         </div>
                         <Image
@@ -39,21 +39,21 @@ const Servicios = () => {
                     </WobbleCard>
                     <WobbleCard containerClassName="col-span-1 min-h-[300px]">
                         <h2 className="uppercase aproil-font sm:max-w-100 lg:max-w-70 text-left text-3xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                            {t('WobbleCardBlackH')}
+                            {t('services.wobbleCardBlackH')}
                         </h2>
                         <p className="mt-4 sm:ml-5 max-w-[18rem] sm:max-w-md lg:max-w-[26rem] text-left text-base text-white">
-                            {t('WobbleCardBlackP')}
+                            {t('services.wobbleCardBlackP')}
                         </p>
                     </WobbleCard>
                     <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gray-500 min-h-[380px] sm:min-h-[300px]">
                         <div className="max-w-md">
                             <h2 className="uppercase aproil-font max-w-sm sm:max-w-md  text-left text-balance text-3xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
-                                {t('WobbleCardGrayH')}
+                                {t('services.wobbleCardGrayH')}
                             </h2>
                             <p className="sm:max-w-[22rem] md:max-w-[26rem] text-left text-base/6 text-white
                             xl:mt-4 xl:ml-15
                             mt-4 sm:ml-5">
-                                {t('WobbleCardGrayP')}
+                                {t('services.wobbleCardGrayP')}
                             </p>
                         </div>
                         <Image

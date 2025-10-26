@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import {ShineBorder} from "@components/magic-ui";
+import {useTranslations} from "next-intl";
 
 const Form = () => {
     const [formData, setFormData] = useState({
@@ -19,9 +20,8 @@ const Form = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Formulario enviado:", formData);
-        // Aquí podrías integrar tu backend o servicio de correo (Ej: API route o EmailJS)
     };
-
+    const t = useTranslations('ContactPage')
     return (
         <div className="flex justify-center w-full">
             <ShineBorder
@@ -30,10 +30,10 @@ const Form = () => {
                 className="rounded-4xl inline-block w-full max-w-lg"
             >
                 <section className="relative w-full max-w-lg mx-auto p-6 rounded-4xl shadow-xl bg-white">
-                    <h1 className="text-3xl pb-10 pt-10">Contactanos</h1>
+                    <h1 className="text-3xl pb-10 pt-10 text-center lg:text-left">{t("form.contact")}</h1>
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">Nombre completo</label>
+                            <label className="block text-lg font-medium text-gray-700">{t("form.name")}</label>
                             <input
                                 type="text"
                                 name="name"
@@ -45,7 +45,7 @@ const Form = () => {
                         </div>
 
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">Teléfono</label>
+                            <label className="block text-lg font-medium text-gray-700">{t("form.phone")}</label>
                             <input
                                 type="tel"
                                 name="phone"
@@ -57,7 +57,7 @@ const Form = () => {
                         </div>
 
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">Correo electrónico</label>
+                            <label className="block text-lg font-medium text-gray-700">{t("form.email")}</label>
                             <input
                                 type="email"
                                 name="email"
@@ -69,7 +69,7 @@ const Form = () => {
                         </div>
 
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">Empresa</label>
+                            <label className="block text-lg font-medium text-gray-700">{t("form.company")}</label>
                             <input
                                 type="text"
                                 name="company"
@@ -80,7 +80,7 @@ const Form = () => {
                         </div>
 
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">Mensaje</label>
+                            <label className="block text-lg font-medium text-gray-700">{t("form.message")}</label>
                             <textarea
                                 name="message"
                                 value={formData.message}
@@ -95,7 +95,7 @@ const Form = () => {
                             type="submit"
                             className="bg-black text-white mt-10 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold px-10"
                         >
-                            Enviar
+                            {t("form.send")}
                         </button>
                     </form>
                 </section>

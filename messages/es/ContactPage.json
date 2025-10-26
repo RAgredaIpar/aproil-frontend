@@ -1,0 +1,24 @@
+{
+  "form": {
+    "contact": "Contáctanos",
+    "name": "Nombre completo",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "message": "Mensaje",
+    "send" : "Enviar"
+  },
+  "card": {
+    "service": "Servicio al cliente:",
+    "email": "Correo electronico:",
+    "location": "Nuestra ubicacion:",
+    "social": "Redes Sociales:"
+  },
+  "info": {
+    "title": "<red>SIEMPRE LISTOS</red> PARA ASESORARTE",
+    "description": "En Aproil Lubricants entendemos los retos de tu sector. Te ayudamos a identificar la mejor solución de lubricación con productos de alto desempeño y soporte especializado, para que alcances tus objetivos con seguridad y confianza. <br></br><br></br>Ponte en contacto con nosotros y con gusto te ayudaremos."
+  },
+  "products": {
+
+  }
+}

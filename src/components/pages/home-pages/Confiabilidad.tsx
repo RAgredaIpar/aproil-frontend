@@ -4,7 +4,7 @@ import Image from "next/image";
 import {useLocale, useTranslations} from "next-intl";
 
 const Confiabilidad = () => {
-    const t = useTranslations('Reliability')
+    const t = useTranslations('HomePage')
     const locale = useLocale();
   return (
     <div className="pt-10 pb-20">
@@ -13,24 +13,31 @@ const Confiabilidad = () => {
           className="font-extrabold uppercase text-gray-500 text-center
                 sm:text-3xl text-2xl"
         >
-            {t('COMPROMISE')}
+            {t("reliability.compromise")}
         </p>
         <h2
           className="my-6 font-bold uppercase aproil-font text-center text-[#E30613]
                 sm:text-5xl text-4xl"
         >
-            {t('INDUSTRY1')} <br />
-            {t('INDUSTRY2')}
+            {t.rich("reliability.industry", {
+                br: () => <br/>
+            })}
         </h2>
-        <p className="px-10 sm:text-lg text-base">
-            {t('TRAJECTORY1')}
-        </p>
-        <p className="mt-6 px-10 sm:text-lg text-base">
-            {t('TRAJECTORY2')}
-        </p>
-        <p className="my-6 px-10 sm:text-lg text-base">
-            {t('TRAJECTORY3')}
-        </p>
+        <div>
+            {t.rich("reliability.trajectory", {
+                p1: (chunks) => (
+                    <p className="px-10 sm:text-lg text-base">
+                        {chunks}
+                    </p>
+                ),
+                p2: (chunks) => (
+                    <p className="mt-6 px-10 sm:text-lg text-base">
+                        {chunks}
+                    </p>
+                ),
+                br: () => <br />
+            })}
+        </div>
       </div>
       <div className="bg-[#E30613] mt-5 xl:mt-30 py-5 sm:py-8 h-full w-full flex items-center justify-center relative">
         <h3
@@ -40,7 +47,7 @@ const Confiabilidad = () => {
             lg:-top-10 lg:left-[15%]
             hidden lg:block"
         >
-            {t('COMPROMISE')}
+            {t("reliability.compromise")}
         </h3>
         <div
           className="flex my-5
@@ -55,26 +62,33 @@ const Confiabilidad = () => {
                 `}
           >
             <h2 className="text-4xl font-bold uppercase aproil-font">
-                {t('INDUSTRY1')} <br />
-                {t('INDUSTRY2')}
+                {t.rich("reliability.industry", {
+                    br: () => <br/>
+                })}
             </h2>
-            <p className="mt-8 text-lg">
-                {t('TRAJECTORY1')}
-            </p>
-            <p className="mt-6 text-lg">
-                {t('TRAJECTORY2')}
-            </p>
-            <p className="mt-6 text-lg">
-                {t('TRAJECTORY3')}
-            </p>
+            <div>
+                {t.rich("reliability.trajectory", {
+                    p1: (chunks) => (
+                        <p className="mt-8 text-lg">
+                            {chunks}
+                        </p>
+                    ),
+                    p2: (chunks) => (
+                        <p className="mt-6 text-lg">
+                            {chunks}
+                        </p>
+                    ),
+                    br: () => <br />
+                })}
+            </div>
             <WordRotate
               className={`mt-15 text-6xl aproil-font font-extrabold text-white uppercase text-center 
               ${locale === "en" ? "lg:pt-7" : "none"}`}
               words={[
-                  `${t('RELIABILITY')}`,
-                  `${t('EXPERTISE')}`,
-                  `${t('INNOVATION')}`,
-                  `${t('SPECIALTY')}`,
+                  `${t('reliability.reliability')}`,
+                  `${t('reliability.expertise')}`,
+                  `${t('reliability.innovation')}`,
+                  `${t('reliability.specialty')}`,
               ]}
               duration={2500}
               motionProps={{
@@ -101,10 +115,10 @@ const Confiabilidad = () => {
               <WordRotate
                 className="aproil-font font-extrabold text-white uppercase text-center pb-5 sm:pb-8 sm:text-6xl text-[2.6rem]"
                 words={[
-                    `${t('RELIABILITY')}`,
-                    `${t('EXPERTISE')}`,
-                    `${t('INNOVATION')}`,
-                    `${t('SPECIALTY')}`,
+                    `${t('reliability.reliability')}`,
+                    `${t('reliability.expertise')}`,
+                    `${t('reliability.innovation')}`,
+                    `${t('reliability.specialty')}`,
                 ]}
                 duration={2500}
                 motionProps={{
@@ -153,7 +167,7 @@ const Confiabilidad = () => {
                         mx-7 pt-7
                         "
             >
-                {t('PILLARS')}
+                {t('reliability.pillars')}
             </div>
           </div>
         </div>

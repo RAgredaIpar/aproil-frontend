@@ -13,7 +13,7 @@ const GlobeSVG = dynamic(()=> import ("@components/magic-ui").then(mod => mod.Gl
 })
 
 const Inicio = () => {
-    const t = useTranslations('Home')
+    const t = useTranslations('HomePage')
     const locale = useLocale();
     return (
         <div className="w-full min-h-dvh container mx-auto px-4 py-4">
@@ -62,15 +62,15 @@ const Inicio = () => {
                                 md:[clip-path:polygon(20px_0,100%_0,calc(100%-20px)_100%,0_100%)]
                                 sm:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
                                 [clip-path:polygon(10px_0,100%_0,calc(100%-10px)_100%,0_100%)]">
-                                {t('DESIGN1')}
-                                <br />
-                                {t('DESIGN2')}
+                                {t.rich("home.design", {
+                                    br: () => <br/>
+                                })}
                             </span>
                         </div>
 
                         {/* Ribbon blanco */}
                         <Link
-                            href="/productos"
+                            href={'/products'}
                             aria-label="Ir a productos"
                             className="
                             relative z-10 overflow-visible
@@ -90,7 +90,7 @@ const Inicio = () => {
                             sm:[clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)]
                             [clip-path:polygon(8px_0,100%_0,calc(100%-8px)_100%,0_100%)]"
                         >
-                            <span className="mr-3">{t('DISCOVER')}</span>
+                            <span className="mr-3">{t('home.discover')}</span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-10 xl:h-10"
@@ -129,31 +129,32 @@ const Inicio = () => {
                             xl:text-5xl xl:pl-5
                             2xl:text-6xl 2xl:mt-15 2xl:pl-13"
                         >
-                            {t('Welcome1')} <br/> {t('Welcome2')}
+                            {t.rich("home.welcome", {
+                                br: () => <br/>
+                            })}
                         </h1>
                     </div>
 
                     <div className="block 2xl:hidden lg:w-1/2 xl:w-200 border-t border-[#e30613] 2xl:-my-4" />
                     <div className="hidden lg:flex flex-col lg:absolute md:right-0 md:top-0 text-left 2xl:mt-18">
-                        <span
-                            className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
-                            text-xl">
-                            {t('DISTRIBUTED1')}
-                        </span>
-                        <span
-                            className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                            text-lg
-                            sm:text-xl
-                            md:text-3xl">
-                            {t('DISTRIBUTED2')}
-                        </span>
-                        <span
-                            className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                            text-lg
-                            sm:text-xl
-                            md:text-2xl">
-                            {t('DISTRIBUTED3')}
-                        </span>
+                        {t.rich('home.distributed', {
+                            span1: (text) => (
+                                <span
+                                    className="font-['Work_Sans'] italic text-gray-600 leading-[1.5] text-xl">
+                                    {text}
+                                </span>
+                            ),
+                            span2: (text) => (
+                                <span className="font-['Work_Sans'] italic text-[#e30613] leading-[1] text-lg sm:text-xl md:text-3xl">
+                                    {text}
+                                </span>
+                            ),
+                            span3: (text) => (
+                                <span className="font-['Work_Sans'] italic text-[#e30613] leading-[1] text-lg sm:text-xl md:text-2xl">
+                                    {text}
+                                </span>
+                            ),
+                        })}
                     </div>
                     <div className="relative flex flex-col lg:flex-row gap-8 2xl:mt-13">
                         <div
@@ -167,12 +168,20 @@ const Inicio = () => {
                                 leading-relaxed text-gray-800 max-w-[850px]
                                 ${locale === "en" ? "2xl:pt-2" : "none"}`}
                         >
-                            <p>{t('Paragraph1')}</p>
-                            <p>{t('Paragraph2')}</p>
-                            <p>{t('Paragraph3')}</p>
+                            {t.rich("home.paragraph", {
+                                p1: (text) => (
+                                    <p> {text} </p>
+                                ),
+                                p2: (text) => (
+                                    <p> {text} </p>
+                                ),
+                                p3: (text) => (
+                                    <p> {text} </p>
+                                ),
+                            })}
 
                             <Link
-                                href="/industrias"
+                                href={'/industries'}
                                 className={`mt-4 text-sm italic font-bold max-w-max
                                     sm:text-base
                                     md:text-lg
@@ -181,29 +190,27 @@ const Inicio = () => {
                                     font-['Work_Sans'] text-[#e30613]
                                     ${locale === "en" ? "2xl:mt-10" : "none"}`}
                             >
-                                {t('Power')} →
+                                {t('home.power')} →
                             </Link>
                         </div>
                         <div className="lg:hidden flex flex-col lg:absolute md:right-0 md:top-0 text-center 2xl:mt-18 pt-10">
-                            <span
-                                className="font-['Work_Sans'] italic text-gray-600 leading-[1.5]
-                                text-xl">
-                                {t('DISTRIBUTED1')}
-                            </span>
-                            <span
-                                className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                                text-lg
-                                sm:text-xl
-                                md:text-3xl">
-                                {t('DISTRIBUTED2')}
-                            </span>
-                            <span
-                                className="font-['Work_Sans'] italic text-[#e30613] leading-[1]
-                                text-lg
-                                sm:text-xl
-                                md:text-2xl">
-                                {t('DISTRIBUTED3')}
-                            </span>
+                            {t.rich('home.distributed', {
+                                span1: (text) => (
+                                    <span className="font-['Work_Sans'] italic text-gray-600 leading-[1.5] text-xl">
+                                        {text}
+                                    </span>
+                                ),
+                                span2: (text) => (
+                                    <span className="font-['Work_Sans'] italic text-[#e30613] leading-[1] text-lg sm:text-xl md:text-3xl">
+                                        {text}
+                                    </span>
+                                ),
+                                span3: (text) => (
+                                    <span className="font-['Work_Sans'] italic text-[#e30613] leading-[1] text-lg sm:text-xl md:text-2xl">
+                                        {text}
+                                    </span>
+                                ),
+                            })}
                         </div>
                         <div className="flex justify-center lg:justify-end">
                             <GlobeSVG className="w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] 2xl:w-[400px] 2xl:h-[400px]" />

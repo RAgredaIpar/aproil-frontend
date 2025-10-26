@@ -50,7 +50,7 @@ export default function LocaleSwitcher() {
                         <li key={l}>
                             <button
                                 onClick={() => handleSelect(l)}
-                                className={`flex w-full items-center justify-start px-4 py-2 text-sm capitalize transition ${
+                                className={`flex rounded-xl w-full items-center justify-start px-4 py-2 text-sm capitalize transition ${
                                     l === locale
                                         ? 'bg-gray-100 text-gray-900 font-semibold'
                                         : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'

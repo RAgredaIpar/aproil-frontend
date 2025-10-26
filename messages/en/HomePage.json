@@ -1,0 +1,50 @@
+{
+  "reliability": {
+    "compromise": "OUR COMPROMISE",
+    "industry": "MAXIMIZE PERFORMANCE <br></br>IN YOUR INDUSTRY.",
+    "trajectory": "<p1>Our trajectory, along with cutting-edge technology and the highest quality standards, allows us to develop lubricants that not only meet but exceed our clients' expectations.</p1> <p2>More than a supplier, we are a strategic ally. We understand the challenges of each sector and offer trust, specialized technical support, and customized solutions that drive your growth. <br></br>Our commitment is based on 4 fundamental pillars that guide everything we do:</p2>",
+    "pillars": "Our four pillars are not just words; they are the foundation of every product and service we offer. They represent our commitment to ensuring your operation runs without interruptions, with the highest efficiency and the specialized technical support you deserve. Trust in the quality that maximizes your performance.",
+    "reliability": "RELIABILITY",
+    "expertise": "EXPERTISE ",
+    "innovation": "INNOVATION",
+    "specialty": "SPECIALTY"
+  },
+  "contact": {
+    "discover": "DISCOVER OUR",
+    "pointer": "SOLUTIONS",
+    "lubrication": "IN LUBRICATION.",
+    "text": "At Aproil Lubricants, you will find an expert ally. We advise you on the best option to increase performance, prevent downtime, and protect your equipment.",
+    "button": "CONTACT AN ADVISOR"
+  },
+  "distributor": {
+    "header": "<p1>BOOST YOUR BUSINESS WITH THE</p1> <p2>POWER OF APROIL LUBRICANTS.</p2>"
+  },
+  "stories": {
+    "text": "Explore our stories",
+    "question1": "Want to know why",
+    "question2": "they choose us?"
+  },
+  "home": {
+    "welcome": "WELCOME TO<br></br>APROIL LUBRICANTS",
+    "design": "SPECIALIZED LUBRICANTS, <br></br>DESIGNED FOR YOUR INDUSTRY.",
+    "discover": "DISCOVER OUR PRODUCTS",
+    "paragraph": "<p1>We manufacture high-performance industrial lubricants that maximize efficiency, protect equipment, and prolong machinery lifespan.</p1> <p2>We serve sectors such as mining, energy, construction, metalworking, food, transportation, and maritime, with innovative solutions adapted to each operation. With cutting-edge technology, high quality standards, and technical expertise, we develop products that exceed expectations.</p2> <p3>Additionally, we have a distribution network in Mexico and part of Latin America, ensuring proximity, availability, and specialized support at all times.</p3>",
+    "power": "POWER WITH APROIL",
+    "distributed": "<span1>DISTRIBUTING IN</span1> <span2>MEXICO AND</span2> <span3>PART OF LATIN AMERICA</span3>"
+  },
+  "services": {
+    "wobbleCardRedH": "SPECIALIZED TRAINING.",
+    "wobbleCardRedP": "We provice technical training on industrial lubrication, product selection, and best practices to optimize equipment performance.",
+    "wobbleCardBlackH": "AFTER-SALES SUPPORT AND SERVICE.",
+    "wobbleCardBlackP": "We accompany you at every stage, offering technical assistance and customized solutions to maximize your operation's efficiency.",
+    "wobbleCardGrayH": "PERSONALIZED TECHNICAL VISITS",
+    "wobbleCardGrayP": "Our experts assess your on-site needs and provide guidance to ensure the best application of our lubricants."
+  },
+  "technology": {
+    "title": "OUR TECHNOLOGY"
+  },
+  "lamp": {
+    "header1": "DISCOVER OUR",
+    "header2": "SERVICES"
+  }
+}
