@@ -77,6 +77,13 @@ function NavItem({
 export default function Header() {
     const t = useTranslations('Header')
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        const prev = document.body.style.overflow;
+        if (open) document.body.style.overflow = "hidden";
+        return () => { document.body.style.overflow = prev; };
+    }, [open]);
+
     return (
         <header className="relative z-[1] w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="mx-auto max-w-7xl px-4 flex items-center justify-between md:justify-center w-full">
@@ -139,7 +146,7 @@ export default function Header() {
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="mobile-menu-title"
-                    className={`fixed inset-y-0 right-0 z-50 w-80 max-w-[85%] bg-white shadow-xl md:hidden
+                    className={`fixed inset-y-0 right-0 z-[50] w-80 max-w-[85%] bg-white shadow-xl md:hidden
                     transform transition-transform duration-300 ease-[cubic-bezier(.16,1,.3,1)]
                 ${open ? "translate-x-0" : "translate-x-full"}`}
                 >
@@ -177,8 +184,6 @@ export default function Header() {
                                 <LocaleSwitcher />
                             </div>
                         </div>
-
-
                     </div>
                 </aside>
             </Portal>

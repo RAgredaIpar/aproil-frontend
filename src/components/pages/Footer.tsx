@@ -1,5 +1,5 @@
 import {icon9001, iconMex} from "@assets/footer";
-import {iconContacto, iconIndustrias, iconInicio, iconLogo, iconProductos, iconServicios,} from "@assets/header";
+import {iconContacto, iconIndustrias, iconInicio, iconLogo, iconProductos} from "@assets/header";
 import {Mail, MapPin, Phone} from "lucide-react"
 import Image from "next/image";
 import Link from "next/link";

@@ -1,6 +1,7 @@
 import { getApplicationsList, getIndustriesList, getTechnologiesList } from "@lib/content/client";
 import type { ApplicationCard, IndustryCard, TechnologyCard } from "../../../types/domain";
 import CategoriesSidebarClient from "./CategoriesSidebarClient";
+import CategoriesSidebarMobile from "./CategoriesSidebarMobile";
 import {getTranslations} from "next-intl/server";
 
 type Props = {
@@ -51,15 +52,23 @@ export default async function CategoriesSidebar({ locale, className }: Props) {
     }));
 
     return (
+        <>
+            <aside
+                className={[
+                    "hidden md:block sticky top-4 w-72 shrink-0 bg-gray-100 p-4 shadow-sm rounded-none rounded-r-xl",
+                    className || "",
+                ].join(" ")}
+            >
+                <h2 className="aproil-font text-3xl font-semibold">{t("Titulo")}</h2>
+                <CategoriesSidebarClient techs={techs} inds={inds} apps={apps} />
+            </aside>
 
-        <aside
-            className={[
-                "sticky top-4 w-72 shrink-0 bg-gray-100 p-4 shadow-sm rounded-none rounded-r-xl",
-                className || "",
-            ].join(" ")}
-        >
-            <h2 className="text-xl font-semibold tracking-tight">{t('Titulo')}</h2>
-            <CategoriesSidebarClient techs={techs} inds={inds} apps={apps} />
-        </aside>
+            <CategoriesSidebarMobile
+                title={t("Titulo")}
+                techs={techs}
+                inds={inds}
+                apps={apps}
+            />
+        </>
     );
 }
