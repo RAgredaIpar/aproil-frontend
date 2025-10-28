@@ -1,11 +1,11 @@
 "use client";
 
-import {useEffect, useState} from "react";
-import {usePathname} from "next/navigation";
+import React, {useEffect, useRef, useState} from "react";
+import { usePathname } from "next/navigation";
 import { iconAplicaciones, iconIndustrias, iconTecnologias } from "@assets/sidebar";
 import Image from "next/image";
 import Link from "next/link";
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 
 type Item = { slug: string; name: string; iconUrl?: string; iconAlt?: string; href: string };
 type Props = { techs: Item[]; inds: Item[]; apps: Item[] };
@@ -25,9 +25,9 @@ function Chevron({ open }: { open: boolean }) {
     );
 }
 
-function Row({
-                 title, icon, open, onToggle, active = false
-             }: { title: string; icon: React.ReactNode; open: boolean; onToggle: () => void; active?: boolean; }) {
+function Row({ title, icon, open, onToggle, active = false }:{
+    title: string; icon: React.ReactNode; open: boolean; onToggle: () => void; active?: boolean;
+}) {
     return (
         <button
             type="button"
@@ -63,14 +63,17 @@ function ItemRow({ item }: { item: Item }) {
                 ].join(" ")}
             >
                 {item.iconUrl ? (
-                    <img
+                    <Image
                         src={item.iconUrl}
                         alt={item.iconAlt || item.name}
-                        className="h-5 w-5 rounded-sm object-contain border"
+                        width={20}
+                        height={20}
+                        sizes="20px"
+                        className="h-5 w-5 rounded-sm object-contain border border-black bg-white"
                         loading="lazy"
                     />
                 ) : (
-                    <span className="h-5 w-5 rounded-sm border bg-white" />
+                    <span className="h-5 w-5 rounded-sm border border-black bg-white" />
                 )}
                 <span className="truncate">{item.name}</span>
             </Link>
@@ -82,38 +85,42 @@ export default function CategoriesSidebarClient({ techs, inds, apps }: Props) {
     const t = useTranslations("Sidebar");
     const pathname = usePathname();
 
-    const [openTechs, setOpenTechs] = useState(false);
-    const [openInds, setOpenInds] = useState(false);
-    const [openApps, setOpenApps] = useState(false);
-
     const isTechSection = pathname.includes("/technologies");
     const isIndSection  = pathname.includes("/industries");
     const isAppSection  = pathname.includes("/applications");
 
+    const [openTechs, setOpenTechs] = useState<boolean>(() => isTechSection);
+    const [openInds,  setOpenInds]  = useState<boolean>(() => isIndSection);
+    const [openApps,  setOpenApps]  = useState<boolean>(() => isAppSection);
+
+    useEffect(() => {
+        setOpenTechs(isTechSection);
+        setOpenInds(isIndSection);
+        setOpenApps(isAppSection);
+    }, [isTechSection, isIndSection, isAppSection]);
+
     useEffect(() => {
         try {
-            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-            if (typeof saved.techs === "boolean") setOpenTechs(saved.techs);
-            if (typeof saved.inds  === "boolean") setOpenInds(saved.inds);
-            if (typeof saved.apps  === "boolean") setOpenApps(saved.apps);
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify({ techs: openTechs, inds: openInds, apps: openApps })
+            );
         } catch {}
-        if (pathname.includes("/technologies")) setOpenTechs(true);
-        if (pathname.includes("/industries"))  setOpenInds(true);
-        if (pathname.includes("/applications")) setOpenApps(true);
-    }, []);
-
-    useEffect(() => {
-        if (pathname.includes("/technologies")) setOpenTechs(true);
-        if (pathname.includes("/industries"))  setOpenInds(true);
-        if (pathname.includes("/applications")) setOpenApps(true);
-    }, [pathname]);
-
-    useEffect(() => {
-        localStorage.setItem(
-            STORAGE_KEY,
-            JSON.stringify({ techs: openTechs, inds: openInds, apps: openApps })
-        );
     }, [openTechs, openInds, openApps]);
+
+    const didRestore = useRef(false);
+
+    useEffect(() => {
+        if (didRestore.current) return;
+        didRestore.current = true;
+
+        try {
+            const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+            if (!isTechSection && typeof saved.techs === "boolean") setOpenTechs(saved.techs);
+            if (!isIndSection  && typeof saved.inds  === "boolean") setOpenInds(saved.inds);
+            if (!isAppSection  && typeof saved.apps  === "boolean") setOpenApps(saved.apps);
+        } catch {}
+    }, [isTechSection, isIndSection, isAppSection]);
 
     const collapseCls = (open: boolean) =>
         `mt-1 space-y-1 pl-7 overflow-hidden transition-[max-height,opacity] duration-300 ease-out
