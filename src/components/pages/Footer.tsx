@@ -3,6 +3,7 @@ import {iconContacto, iconIndustrias, iconInicio, iconLogo, iconProductos} from 
 import {Instagram, Linkedin, Mail, MapPin, Phone, Youtube} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
 
 function SocialLink({
                         href,
@@ -28,21 +29,20 @@ function SocialLink({
 
 function IconWrap({children}: { children: React.ReactNode }) {
     return (
-        <span className="inline-flex h-5 w-5 items-center justify-center shrink-0">
+        <span className="inline-flex items-center justify-center shrink-0">
       {children}
     </span>
     );
 }
 
 export default function Footer() {
+    const t = useTranslations('Footer')
+
     return (
         <footer className="bg-neutral-100">
-            {/* TOP: 2 bloques (logo izq. / resto der. centrado) */}
             <div className="mx-auto py-12">
-                {/* TOP: 2 columnas (logo izq / resto der centrado) */}
                 <div className="mx-auto max-w-7xl px-4 pb-12 sm:py-12">
                     <div className="grid grid-cols-1 lg:grid-cols-[16rem_minmax(0,1fr)] gap-4 xl:gap-10 md:items-start">
-                        {/* Izquierda: Logo + lema */}
                         <div className="md:shrink-0">
                             <Image src={iconLogo} alt="APROIL Lubricants" className="h-25 md:h-30 w-auto -translate-x-4"
                                    draggable={false} priority/>
@@ -53,91 +53,82 @@ export default function Footer() {
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(12rem,max-content)_minmax(18rem,max-content)_minmax(12rem,max-content)] sm:justify-between gap-y-10 sm:gap-x-8">
-                            {/* Navegación */}
                             <div className="sm:text-[16px] text-[13px]">
-                                <h4 className="mb-4 font-semibold uppercase tracking-wide text-neutral-900">Navegación</h4>
+                                <h4 className="mb-4 font-semibold uppercase tracking-wide text-neutral-900">{t('Navigation')}</h4>
                                 <ul className="space-y-2 text-neutral-900 max-w-max">
-                                    <li><Link href="/" className="flex items-start gap-3 hover:opacity-90">
-                                        <IconWrap><Image src={iconInicio} alt=""
-                                                         className="h-5 w-5 object-contain"/></IconWrap>
-                                        <span className="leading-5">Inicio</span>
+                                    <li><Link href="/" className="flex items-start gap-3 hover:opacity-90 hover:underline">
+                                        <IconWrap><Image src={iconInicio} alt="" className="h-6 w-6 object-contain"/></IconWrap>
+                                        <span className="leading-5">{t('Home')}</span>
                                     </Link></li>
-                                    <li><Link href="/products" className="flex items-start gap-3 hover:opacity-90">
-                                        <IconWrap><Image src={iconProductos} alt="" className="h-5 w-5 object-contain"/></IconWrap>
-                                        <span className="leading-5">Productos</span>
+                                    <li><Link href="/products" className="flex items-start gap-3 hover:opacity-90 hover:underline">
+                                        <IconWrap><Image src={iconProductos} alt="" className="h-6 w-6 object-contain"/></IconWrap>
+                                        <span className="leading-5">{t('Products')}</span>
                                     </Link></li>
-                                    <li><Link href="/industries" className="flex items-start gap-3 hover:opacity-90">
-                                        <IconWrap><Image src={iconIndustrias} alt=""
-                                                         className="h-5 w-5 object-contain"/></IconWrap>
-                                        <span className="leading-5">Industrias</span>
+                                    <li><Link href="/industries" className="flex items-start gap-3 hover:opacity-90 hover:underline">
+                                        <IconWrap><Image src={iconIndustrias} alt="" className="h-6 w-6 object-contain"/></IconWrap>
+                                        <span className="leading-5">{t('Industries')}</span>
                                     </Link></li>
-                                    <li><Link href="/contact" className="flex items-start gap-3 hover:opacity-90">
-                                        <IconWrap><Image src={iconContacto} alt="" className="h-5 w-5 object-contain"/></IconWrap>
-                                        <span className="leading-5">Contacto</span>
+                                    <li><Link href="/contact" className="flex items-start gap-3 hover:opacity-90 hover:underline">
+                                        <IconWrap><Image src={iconContacto} alt="" className="h-6 w-6 object-contain"/></IconWrap>
+                                        <span className="leading-5">{t('Contact')}</span>
                                     </Link></li>
                                 </ul>
                             </div>
 
                             {/* Contacto */}
                             <div className="sm:text-[16px] text-[13px]">
-                                <h4 className="mb-4 font-semibold uppercase tracking-wide text-neutral-900">Contacto</h4>
+                                <h4 className="mb-4 font-semibold uppercase tracking-wide text-neutral-900">{t('Contact')}</h4>
                                 <ul className="space-y-3 text-neutral-900">
                                     <li className="flex items-start gap-3">
                                         <IconWrap><MapPin className="h-5 w-5"/></IconWrap>
                                         <span className="leading-5">
-                Mérida, Yuc. México
-              </span>
+                                            Mérida, Yuc. México
+                                        </span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <IconWrap><Phone className="h-5 w-5"/></IconWrap>
                                         <a href="tel:+521234567890"
-                                           className="hover:underline leading-5">123-456-7890</a>
+                                           className="hover:opacity-90 hover:underline leading-5">123-456-7890</a>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <IconWrap><Mail className="h-5 w-5"/></IconWrap>
                                         <a href="mailto:ventas@aproillubricants.com"
-                                           className="hover:underline leading-5">
+                                           className="hover:opacity-90 hover:underline leading-5">
                                             ventas@aproillubricants.com
                                         </a>
                                     </li>
                                 </ul>
                             </div>
 
-                            {/* Legales + sellos */}
                             <div className="sm:text-[16px] text-[13px]">
-                                <h4 className="mb-4 font-semibold uppercase tracking-wide text-neutral-900">Legales</h4>
+                                <h4 className="mb-4 font-semibold uppercase tracking-wide text-neutral-900">{t('Legal')}</h4>
                                 <ul className="space-y-2 text-neutral-900">
-                                    <li><Link href="/privacidad" className="hover:underline">Aviso de privacidad</Link>
+                                    <li><Link href="/privacy" className="hover:opacity-90 hover:underline">{t('Notice')}</Link>
                                     </li>
-                                    <li><Link href="/terminos" className="hover:underline">Términos y condiciones</Link>
+                                    <li><Link href="/terms" className="hover:opacity-90 hover:underline">{t('Terms')}</Link>
                                     </li>
                                 </ul>
                                 <div className="flex items-center gap-6 pt-6">
-                                    <Image src={icon9001} alt="Certificación ISO 9001" className="h-12 w-auto"/>
-                                    <Image src={iconMex} alt="Producto Mexicano" className="h-12 w-auto"/>
+                                    <Image src={icon9001} alt="Certificación ISO 9001" className="h-15 w-auto"/>
+                                    <Image src={iconMex} alt="Producto Mexicano" className="h-15 w-auto"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Divider DENTRO del container (no full-width) */}
                 <div className="mx-auto max-w-7xl px-4">
                     <div className="border-t border-neutral-200"/>
                 </div>
             </div>
 
-
-            {/* Bottom bar */
-            }
             <div
-                className="mx-auto max-w-7xl px-4 py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                className="mx-auto max-w-7xl px-4 pb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm text-neutral-600">
                     © {new Date().getFullYear()} Aproil Lubricants, Inc. All rights reserved.
                 </p>
                 <div className="flex items-center gap-3">
-                    {/* Reemplaza '#' por tus URLs */}
-                    <SocialLink href="#" label="Instagram">
+                    <SocialLink href="https://www.instagram.com/aproillubricants/" label="Instagram">
                         <Instagram className="h-4 w-4"/>
                     </SocialLink>
                     <SocialLink href="#" label="LinkedIn">
@@ -149,6 +140,5 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
-    )
-        ;
+    );
 }
