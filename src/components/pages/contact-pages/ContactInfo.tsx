@@ -4,7 +4,8 @@ import {useTranslations} from "next-intl";
 const ContactInfo = () => {
     const t = useTranslations('ContactPage')
     return (
-        <section className="relative w-full lg:w-[90%] bg-[#e30613] text-white px-12 py-10 lg:rounded-r-4xl shadow-xl before:content-[''] before:absolute before:top-0 before:left-5 lg:before:left-4 sm:before:left-15 before:h-full before:w-[6px] before:bg-white">
+        <section className="relative w-full lg:w-[90%] bg-[#e30613] text-white px-12 py-10 lg:rounded-r-4xl shadow-xl
+        before:content-[''] before:absolute before:top-0 before:left-5 lg:before:left-4 sm:before:left-15 before:h-full before:w-[6px] before:bg-white">
             <div className="space-y-7 flex flex-col items-center lg:items-start sm:text-xl">
                 <div className="flex gap-4 w-full sm:max-w-md  lg:max-w-max">
                     <Phone className="lg:w-8 h-8 flex-shrink-0 mt-1"/>
