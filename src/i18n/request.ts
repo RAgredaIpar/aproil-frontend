@@ -18,7 +18,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
         locale = routing.defaultLocale;
     }
 
-    const modules = ['Header', 'Footer', 'ProductPage', 'Sidebar', 'ContactPage', 'HomePage'];
+    const modules = ['Header', 'Footer', 'ProductPage', 'Sidebar', 'ContactPage', 'HomePage', 'FAQ'];
     const messages: Record<string, Record<string, string>> = {};
 
     for (const mod of modules) {

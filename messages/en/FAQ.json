@@ -1,0 +1,8 @@
+{
+  "item0-q": "What type of lubricant is used in enclosed gear drives?",
+  "item0-a": "A mineral or synthetic oil formulated with EP (Extreme Pressure) additives is generally recommended to withstand high loads and reduce wear.",
+  "item1-q": "How should one choose the best lubricant for industrial gearboxes?",
+  "item1-a": "Consider the gear type, load, speed, operating temperature, and environment. Select the ISO viscosity specified by the manufacturer, and prioritize EP/AW, anti-corrosion, and anti-foaming additives. Verify seal compatibility and set relubrication intervals according to operating conditions.",
+  "item2-q": "Can biodegradable lubricants be used in gearboxes?",
+  "item2-a": "Yes. Synthetic or vegetable esters are an option where environmental risk or stringent regulations apply. Verify compatibility with metals and seals, as well as thermal and hydrolytic stability and the manufacturer’s guidance; they are typically more costly and should be monitored for performance."
+}

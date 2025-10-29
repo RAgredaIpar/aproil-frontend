@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTechnologyPage } from "@lib/content/client";
 import CategoriesSidebar from "@pages/sidebar/CategoriesSidebar";
+import FaqSection from "@pages/sidebar/FAQ";
 
 export const revalidate = 600;
 
@@ -70,6 +71,7 @@ export default async function TechnologyDetailPage({ params }: Props) {
                         </div>
                     </article>
                 </div>
+                <FaqSection/>
             </main>
         );
     } catch {
