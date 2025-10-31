@@ -86,16 +86,15 @@ export default function Tech(){
                     />
                 </div>
                 <div className="content-center text-center lg:pb-8">
-                    <Link href={`/${local}/contact`}>
                         <InteractiveHoverButton
                             color="#FFFFFF"
                             textColor="#E30613"
                             hoverColor="#E30613"
                             hoverTextColor="#FFFFFF"
+                            href={`/${local}/contact`}
                             className="content-center py-1 rounded-xl lg:py-0 lg:px-2 2xl:px-5 lg:rounded-4xl border border-[#E30613]">
                             {t("card.catalog")}
                         </InteractiveHoverButton>
-                    </Link>
                 </div>
             </div>
             <div className="block lg:hidden mx-5 sm:mx-auto text-center my-20 border-t-8 border-b-8 p-3">

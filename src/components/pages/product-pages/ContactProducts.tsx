@@ -3,7 +3,6 @@ import { PointerHighlight } from "@components/aceternity";
 import { InteractiveHoverButton } from "@components/magic-ui";
 import Image from "next/image";
 import {useLocale, useTranslations} from "next-intl";
-import Link from "next/link";
 
 const ContactProducts = () => {
     const t = useTranslations('HomePage')
@@ -40,10 +39,7 @@ const ContactProducts = () => {
                 xl:text-2xl xl:pt-10
                 lg:text-2xl lg:pt-20
                 sm:text-2xl sm:pt-10">
-                    <Link href={`/${locale}/contact`}>
-                        <InteractiveHoverButton className="rounded-2xl p-2 lg:rounded-full">{t('contact.button')}</InteractiveHoverButton>
-                    </Link>
-
+                        <InteractiveHoverButton href={`/${locale}/contact`} className="rounded-2xl p-2 lg:rounded-full">{t('contact.button')}</InteractiveHoverButton>
                 </div>
                 <div className="flex lg:hidden justify-center items-center w-full pt-15">
                     <Image
