@@ -72,7 +72,6 @@ export type TechnologyPage = {
 };
 
 // --- APLICACIONES (SLUG)
-
 export type ApplicationCard = {
     slug: string;
     name: Localized<string>;
@@ -117,7 +116,6 @@ export type ApplicationPage = {
 };
 
 // -- - INDUSTRIAS (SLUG)
-
 export type FeaturedAppRaw = {
     rank: number;
     slug: string;
@@ -159,7 +157,6 @@ export type IndustryPage = {
 };
 
 // INDUSTRIAS (GENERAL)
-
 export type IndustryCard = {
     slug: string;
     name: Localized<string>;

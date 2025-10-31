@@ -6,6 +6,12 @@ body {
     font-size: 16px;
 }
 
+.nunito-font {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 .aproil-font {
     font-family: "Work Sans", sans-serif;
     font-weight: 900;

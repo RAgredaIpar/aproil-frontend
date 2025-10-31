@@ -46,7 +46,7 @@ export default function CategoriesSidebarMobile({
                 type="button"
                 aria-label="Abrir categorías"
                 onClick={() => setOpen(true)}
-                className={`md:hidden fixed left-0 top-1/2 -translate-y-1/2 z-[50]
+                className={`lg:hidden fixed left-0 top-1/2 -translate-y-1/2 z-[50]
           w-8 h-16 rounded-r-full bg-white text-[#E30613] border border-gray-200 shadow
           flex items-center justify-center transition-transform duration-300
           hover:translate-x-0.5
@@ -61,7 +61,7 @@ export default function CategoriesSidebarMobile({
             <Portal>
                 <div
                     onClick={() => setOpen(false)}
-                    className={`fixed inset-0 z-[50] bg-black/40 transition-opacity duration-300 md:hidden
+                    className={`fixed inset-0 z-[50] bg-black/40 transition-opacity duration-300 lg:hidden
             ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
                 />
 
@@ -69,7 +69,7 @@ export default function CategoriesSidebarMobile({
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="mobile-sidebar-title"
-                    className={`fixed inset-y-0 left-0 z-[50] w-80 max-w-[85%] bg-white shadow-xl md:hidden 
+                    className={`fixed inset-y-0 left-0 z-[50] w-80 max-w-[85%] bg-white shadow-xl lg:hidden 
                     transform transition-transform duration-300 ease-[cubic-bezier(.16,1,.3,1)]
                     ${open ? "translate-x-0" : "-translate-x-full"}`}
                 >

@@ -55,7 +55,7 @@ export default async function CategoriesSidebar({ locale, className }: Props) {
         <>
             <aside
                 className={[
-                    "hidden md:block sticky top-4 w-72 shrink-0 bg-gray-100 p-4 shadow-sm rounded-none rounded-r-xl",
+                    "hidden lg:block sticky top-4 w-72 shrink-0 bg-gray-100 p-4 shadow-sm rounded-none rounded-r-xl",
                     className || "",
                 ].join(" ")}
             >

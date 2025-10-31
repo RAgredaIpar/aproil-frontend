@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
-import { getApplicationPage } from "@lib/content/client";
+import {notFound} from "next/navigation";
+import {getApplicationPage} from "@lib/content/client";
 import CategoriesSidebar from "@pages/sidebar/CategoriesSidebar";
 import FaqSection from "@pages/sidebar/FAQ";
 
@@ -9,8 +9,8 @@ type Props = {
     params: Promise<{ locale: "es" | "en"; slug: string }>;
 };
 
-export default async function ApplicationDetailPage({ params }: Props) {
-    const { locale, slug } = await params;
+export default async function ApplicationDetailPage({params}: Props) {
+    const {locale, slug} = await params;
 
     try {
         const data = await getApplicationPage(slug, locale);
@@ -32,17 +32,16 @@ export default async function ApplicationDetailPage({ params }: Props) {
                     />
                 )}
 
-                <div className="grid grid-cols-[18rem_minmax(0,1fr)] gap-6 py-6">
-                    <CategoriesSidebar
-                        locale={locale}
-                        className="sticky top-4 min-h-[calc(100vh-1rem)]"
-                    />
+                <div className="mx-auto">
+                    <div className="grid grid-cols-1 md:[grid-template-columns:18rem_minmax(0,1fr)] gap-6 py-6">
+                        <CategoriesSidebar
+                            locale={locale}
+                            className="sticky top-4 min-h-[calc(100vh-1rem)]"
+                        />
 
-                    <article className="min-w-0 mx-auto">
-                        <div className="mx-auto max-w-7xl px-4">
-                            <h1 className="text-3xl font-semibold">{data.name}</h1>
+                        <article className="min-w-0 mx-auto max-7xl px-4">
+                            <h1 className="text-5xl aproil-font">{data.name}</h1>
                             <p className="text-sm text-gray-500 mt-1">slug: {slug}</p>
-
                             {data.contentMd && (
                                 <pre className="mt-6 whitespace-pre-wrap text-gray-800">
                             {data.contentMd}
@@ -69,8 +68,8 @@ export default async function ApplicationDetailPage({ params }: Props) {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                 </div>
                 <FaqSection/>
             </main>

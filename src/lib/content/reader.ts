@@ -12,7 +12,7 @@ export async function fetchJson<T>(path: string, tag: string): Promise<T> {
         // Para que la página pueda decidir 404, devolvemos un error claro
         throw new Error(`Fetch failed ${res.status} for ${url}`);
     }
-    return res.json() as Promise<T>;
+    return await res.json() as Promise<T>;
 }
 
 // Fallback genérico: devuelve pair[locale] o pair.es

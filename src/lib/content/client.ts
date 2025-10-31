@@ -1,51 +1,48 @@
-import { LIST_TAGS, technologyTag, applicationTag, industryTag } from "@lib/cache/tags";
+import {applicationTag, industryTag, LIST_TAGS, technologyTag} from "@lib/cache/tags";
 import {
     ApplicationGroup,
     ApplicationGroupRaw,
-    Locale,
-    ProductItem,
-    ProductItemRaw,
-    TechnologyPage,
-    TechnologyPageRaw,
-    TechnologiesListJson,
-    ApplicationsListJson,
     ApplicationPage,
     ApplicationPageRaw,
-    TechnologyGroup,
-    TechnologyGroupRaw,
-    IndustryPage,
-    IndustryPageRaw,
+    ApplicationsListJson,
     FeaturedApp,
     FeaturedAppRaw,
     FeaturedProduct,
     FeaturedProductRaw,
-    IndustriesListJson
+    IndustriesListJson,
+    IndustryPage,
+    IndustryPageRaw,
+    Locale,
+    ProductItem,
+    ProductItemRaw,
+    TechnologiesListJson,
+    TechnologyGroup,
+    TechnologyGroupRaw,
+    TechnologyPage,
+    TechnologyPageRaw
 } from "../../types/domain";
-import { fetchJson, pickLocalized, pickProductLocale } from "./reader";
+import {fetchJson, pickLocalized, pickProductLocale} from "./reader";
 
 // LISTAS PARA VISTA PRODUCTS Y SIDEBAR DE TAKO SMALL
 export async function getTechnologiesList() {
-    const data = await fetchJson<TechnologiesListJson>(
+    return await fetchJson<TechnologiesListJson>(
         "technologies.json",
         LIST_TAGS.technologies
     );
-    return data;
 }
 
 export async function getApplicationsList() {
-    const data = await fetchJson<ApplicationsListJson>(
+    return await fetchJson<ApplicationsListJson>(
         "applications.json",
         LIST_TAGS.applications
     );
-    return data;
 }
 
 export async function getIndustriesList() {
-    const data = await fetchJson<IndustriesListJson>(
+    return await fetchJson<IndustriesListJson>(
         "industries.json",
         LIST_TAGS.industries
     );
-    return data;
 }
 
 // TECNOLOGIAS (VISTA SLUG)
@@ -96,7 +93,6 @@ export async function getTechnologyPage(
 }
 
 // APLICACIONES (VISTA SLUG)
-
 export async function getApplicationPage(
     slug: string,
     locale: Locale
@@ -145,7 +141,6 @@ export async function getApplicationPage(
 }
 
 // --- INDUSTRIAS (VISTA SLUG)
-
 export async function getIndustryPage(
     slug: string,
     locale: Locale

@@ -2,10 +2,11 @@ import { tamborAproil } from "@assets/home-page";
 import { PointerHighlight } from "@components/aceternity";
 import { InteractiveHoverButton } from "@components/magic-ui";
 import Image from "next/image";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 const Contacto = () => {
     const t = useTranslations('HomePage')
+    const locale = useLocale();
     return (
         <section className="container w-full mx-auto flex relative">
             <div className="w-full sm:w-1/2
@@ -46,7 +47,7 @@ const Contacto = () => {
                 xl:text-2xl xl:pt-10
                 lg:text-2xl lg:pt-20
                 sm:text-2xl sm:pt-10">
-                    <InteractiveHoverButton>{t('contact.button')}</InteractiveHoverButton>
+                    <InteractiveHoverButton href={`/${locale}/contact`}>{t('contact.button')}</InteractiveHoverButton>
                 </div>
             </div>
             <div className="hidden sm:flex xl:max-w-150 2xl:max-w-180 overflow-hidden xl:pt-10 w-full xl:pl-20">
