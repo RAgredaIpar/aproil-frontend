@@ -6,6 +6,7 @@ import {InteractiveHoverButton} from "@components/magic-ui";
 import {pdfIcon} from "@assets/product";
 import Image from "next/image";
 import MarkdownContent from "@pages/markdown/MarkdownContent";
+import {getTranslations} from "next-intl/server";
 
 export const revalidate = 600;
 
@@ -15,6 +16,7 @@ type Props = {
 
 export default async function IndustryDetailPage({params}: Props) {
     const {locale, slug} = await params;
+    const t = await getTranslations({ locale, namespace: "Slug" });
 
     try {
         const data = await getIndustryPage(slug, locale);
@@ -57,14 +59,13 @@ export default async function IndustryDetailPage({params}: Props) {
                             className="sticky top-4 min-h-[calc(100vh-1rem)]"
                         />
 
-                        <article className="mx-auto sm:min-w-[40rem] sm:max-w-[40rem] px-4 py-6">
-                            <p className="text-3xl sm:text-5xl aproil-font text-[#E30613]">LUBRICANTES
-                                PARA</p>
+                        <article className="mx-auto sm:w-[40rem] px-4 py-6">
+                            <p className="text-3xl uppercase sm:text-5xl aproil-font text-[#E30613]">{t('industries.pt1')}</p>
                             <h1
                                 className={`aproil-font uppercase ${
                                     (data.name?.trim().split(/\s+/).length ?? 0) === 1
                                         ? "text-[32px] sm:text-5xl"
-                                        : "text-[21px] sm:text-5xl"
+                                        : "text-[20px] sm:text-5xl"
                                 }`}
                             >
                                 {data.name}
@@ -73,14 +74,14 @@ export default async function IndustryDetailPage({params}: Props) {
                             <p className="mt-6 break-words text-gray-500">{data.metaDescription}</p>
 
                             {data.contentMd && (
-                                <pre className="mt-6 whitespace-pre-wrap sm:max-w-[33rem]">
-                                    <MarkdownContent content={data.contentMd} />
-                                </pre>
+                                <div className="mt-5 sm:max-w-[33rem]">
+                                    <MarkdownContent content={data.contentMd}/>
+                                </div>
                             )}
 
-                            <section className="mt-3">
-                                <h2 className="text-[23px] sm:text-3xl aproil-font uppercase text-[#E30613] border-b-2 border-black">
-                                    Aplicaciones más relevantes
+                            <section className="mt-6">
+                                <h2 className="text-[25px] sm:text-3xl aproil-font uppercase text-[#E30613] border-b-2 border-black">
+                                    {t('industries.pt2')}
                                 </h2>
                                 <ul className="mt-8 space-y-2">
                                     {data.featuredApplications.map((a) => (
@@ -108,7 +109,7 @@ export default async function IndustryDetailPage({params}: Props) {
 
                             <section className="mt-6">
                                 <h2 className="text-[23px] sm:text-3xl aproil-font uppercase text-[#E30613] border-b-2 border-black">
-                                    Productos destacados
+                                    {t('industries.pt3')}
                                 </h2>
                                 <ul className="mt-8 space-y-4">
                                     {data.featuredProducts.map((p) => (
