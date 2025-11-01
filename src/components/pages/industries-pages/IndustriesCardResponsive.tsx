@@ -8,7 +8,7 @@ export default function IndustriesCardResponsive(){
     const t = useTranslations('IndustriesPage');
     const locale = useLocale();
     return (
-        <section className="bg-neutral-100 rounded-4xl my-10 block md:hidden ">
+        <section className="bg-neutral-100 rounded-4xl my-10 block md:hidden px-3">
             <div className="max-w-lg mx-auto">
                 <div className="text-center py-10">
                         <span
