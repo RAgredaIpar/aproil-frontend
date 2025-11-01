@@ -3,7 +3,6 @@ import Image from "next/image";
 import {useLocale, useTranslations} from "next-intl";
 import {catalogMockup, lineaLarga} from "@assets/product";
 import {InteractiveHoverButton} from "@components/magic-ui";
-import Link from "next/link";
 import {TextAnimate} from "@components/magic-ui/MagicText/magic-text";
 
 export default function Tech(){

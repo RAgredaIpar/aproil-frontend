@@ -20,13 +20,6 @@ const COLORS: ColorSpec[] = [
     {bg: "bg-[#42B02B]", text: "text-white", bgHex: "#42B02B"}, // verde
 ];
 
-const OVERRIDE_BY_NAME: Record<string, number> = {
-    MEMBRAN: 0,
-    ADSOR: 1,
-    OXID: 2,
-    " UV": 3,
-};
-
 function colorIndexFromSlug(slug: string, fallbackIdx: number) {
     if (!slug) return fallbackIdx % COLORS.length;
     let h = 0;

@@ -78,6 +78,7 @@ export default function TechAccordion({
     const toggle = (key: string) => {
         setOpen(prev => {
             const next = new Set(prev);
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             next.has(key) ? next.delete(key) : next.add(key);
             return next;
         });
