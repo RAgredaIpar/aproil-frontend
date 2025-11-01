@@ -39,7 +39,7 @@ const ContactProducts = () => {
                 xl:text-2xl xl:pt-10
                 lg:text-2xl lg:pt-20
                 sm:text-2xl sm:pt-10">
-                        <InteractiveHoverButton href={`/${locale}/contact`} className="rounded-2xl p-2 lg:rounded-full">{t('contact.button')}</InteractiveHoverButton>
+                        <InteractiveHoverButton href={`/${locale}/contact`} className="rounded-2xl lg:rounded-full">{t('contact.button')}</InteractiveHoverButton>
                 </div>
                 <div className="flex lg:hidden justify-center items-center w-full pt-15">
                     <Image

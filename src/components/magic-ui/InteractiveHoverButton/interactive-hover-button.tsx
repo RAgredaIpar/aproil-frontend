@@ -10,12 +10,13 @@ type InteractiveHoverButtonProps = {
     hoverColor?: string;
     hoverTextColor?: string;
     lineColor?: string;
+    arrowRight?: string;
 } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "color">;
 
 export const InteractiveHoverButton = React.forwardRef<
     HTMLAnchorElement,
     InteractiveHoverButtonProps
->(({ children, className, href, color = "#E30613", textColor = "#FFFFFF", hoverColor = "#FFFFFF", hoverTextColor = "#E30613", lineColor = "#E30613", ...props }, ref) => {
+>(({ children, className, href, color = "#E30613", textColor = "#FFFFFF", hoverColor = "#FFFFFF", hoverTextColor = "#E30613", lineColor = "#E30613", arrowRight = "2xl:w-10 2xl:h-10", ...props }, ref) => {
     return (
         <Link
             ref={ref}
@@ -49,7 +50,7 @@ export const InteractiveHoverButton = React.forwardRef<
                 style={{ backgroundColor: hoverColor }}
             >
                 <span style={{ color: hoverTextColor }}>{children}</span>
-                <ArrowRight className="2xl:w-10 2xl:h-10" style={{ color: hoverTextColor }} />
+                <ArrowRight className={arrowRight} style={{ color: hoverTextColor }} />
             </div>
         </Link>
     );

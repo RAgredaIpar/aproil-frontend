@@ -26,7 +26,7 @@ export default function Tech(){
                     lg:text-left lg:flex
                     xl:pr-3 xl:mt-10 xl:pl-15
                     2xl:pr-30 2xl:mt-10 2xl:pl-20 2xl:text-[16px]">
-                            <p className="text-gray-600">
+                            <p>
                                 {t('card.description')}
                             </p>
                         </div>
@@ -91,6 +91,7 @@ export default function Tech(){
                             hoverColor="#E30613"
                             hoverTextColor="#FFFFFF"
                             href={`/${local}/contact`}
+                            arrowRight="2xl:w-8 2xl:h-8"
                             className="content-center py-1 rounded-xl lg:py-0 lg:px-2 2xl:px-5 lg:rounded-4xl border border-[#E30613]">
                             {t("card.catalog")}
                         </InteractiveHoverButton>
